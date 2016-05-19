@@ -18,7 +18,8 @@ aptitude search ~ahold
 
 # find rev in bump to 4.1.19 commit in: https://github.com/Hexxeh/rpi-firmware/commits/master
 rpi-update 6e8b794818e06f50724774df3b1d4c6be0b5708c
-# get headers for 4.1.19
+reboot
+# get headers for 4.1.19 (alternatively you can use rpi-source and get the full kernel sources)
 wget https://www.niksula.hut.fi/~mhiienka/Rpi/linux-headers-rpi/linux-headers-4.1.19-v7%2B_4.1.19-v7%2B-2_armhf.deb
 dpkg -i linux-headers-4.1.19-v7+_4.1.19-v7+-2_armhf.deb
 
