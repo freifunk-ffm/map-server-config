@@ -2,7 +2,7 @@
 
 ## Installation
 
-Die Datei install.sh enthält eine Schritt für Schritt Anleitung nach welcher die hopglass-map installiert ist. Die Verwendeten Komponenten sind:
+Die Datei install.sh enthält eine Schritt für Schritt Anleitung nach welcher die hopglass-map installiert ist. Als Betriebssystem wird debian etch angenommen. Die Verwendeten Komponenten sind:
 
 - Webserver (Nginx, weil gzip-Komprimierung und reverse proxies damit einfacher sind)
 - eine aktuelle Version von NodeJS (Version >4.3) (https://nodejs.org/en/download/package-manager/)
