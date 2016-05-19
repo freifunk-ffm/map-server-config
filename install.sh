@@ -25,6 +25,7 @@ node_modules/.bin/grunt
 exit
 
 cp hopglass/config.json /home/hopglass/hopglass/build/
+# this step assumes that you have a bat0 interface
 cp hopglass-server/*.json /home/hopglass/hopglass-server/
 cp hopglass-server/hopglass.service /etc/systemd/system/
 systemctl enable hopglass
