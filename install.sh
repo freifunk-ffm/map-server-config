@@ -3,7 +3,7 @@
 ### SYSTEM (debian etch) ###
 
 apt update
-apt install nodejs npm ruby-sass prometheus grafana
+apt install nodejs npm ruby-sass prometheus grafana nginx
 
 ### HOPGLASS (copy paste from hopglass(-server) doku on github) ####
 
