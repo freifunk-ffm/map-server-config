@@ -1,8 +1,10 @@
 {
-  "id": 2,
+  "id": 1,
   "title": "global",
   "originalTitle": "global",
-  "tags": [],
+  "tags": [
+    "global"
+  ],
   "style": "dark",
   "timezone": "browser",
   "editable": true,
@@ -17,7 +19,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "prometheus",
+          "datasource": null,
           "editable": true,
           "error": false,
           "fill": 1,
@@ -49,7 +51,35 @@
           },
           "lines": true,
           "linewidth": 2,
-          "links": [],
+          "links": [
+            {
+              "dashUri": "db/global",
+              "dashboard": "global",
+              "includeVars": true,
+              "keepTime": true,
+              "targetBlank": true,
+              "title": "Grafana",
+              "type": "dashboard"
+            },
+            {
+              "targetBlank": true,
+              "title": "RRD-Statistiken",
+              "type": "absolute",
+              "url": "https://sstats.ffm.freifunk.net/host.php?h=uber.ffm.freifunk.net&p=exec"
+            },
+            {
+              "targetBlank": true,
+              "title": "Wifi-Aliases",
+              "type": "absolute",
+              "url": "/hopglass/wifi-aliases.txt"
+            },
+            {
+              "targetBlank": true,
+              "title": "Hosts-Datei",
+              "type": "absolute",
+              "url": "/hopglass/hosts"
+            }
+          ],
           "nullPointMode": "connected",
           "percentage": false,
           "pointradius": 5,
@@ -68,28 +98,31 @@
           "targets": [
             {
               "expr": "max(meshnodes_total)",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Knoten (alle)",
               "metric": "meshnodes_total",
               "refId": "A",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "max(meshnodes_online_total)",
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Knoten (online)",
               "metric": "meshnodes_online_total",
               "refId": "B",
-              "step": 600
+              "step": 240
             },
             {
               "expr": "max(total_clients)",
               "hide": false,
+              "interval": "",
               "intervalFactor": 2,
               "legendFormat": "Nutzer",
               "metric": "total_clients",
               "refId": "C",
-              "step": 600
+              "step": 240
             }
           ],
           "timeFrom": null,
@@ -100,13 +133,34 @@
             "shared": true,
             "value_type": "cumulative"
           },
-          "transparent": true,
+          "transparent": false,
           "type": "graph",
           "x-axis": true,
+          "xaxis": {
+            "show": true
+          },
           "y-axis": true,
           "y_formats": [
             "short",
             "short"
+          ],
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Knoten",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "Nutzer",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         }
       ],
@@ -162,20 +216,13 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(rate(statistics_traffic_tx_bytes[5m]))*8",
+              "expr": "8*sum(rate(statistics_traffic{type=~\"rx|tx\"}[5m])) by (type)",
+              "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "TX",
+              "legendFormat": "{{type}}",
               "metric": "statistics_traffic_tx_bytes",
               "refId": "A",
-              "step": 600
-            },
-            {
-              "expr": "sum(rate(statistics_traffic_rx_bytes[5m]))*8",
-              "intervalFactor": 2,
-              "legendFormat": "RX",
-              "metric": "statistics_traffic_tx_bytes",
-              "refId": "B",
-              "step": 600
+              "step": 240
             }
           ],
           "timeFrom": null,
@@ -186,13 +233,34 @@
             "shared": true,
             "value_type": "cumulative"
           },
-          "transparent": true,
+          "transparent": false,
           "type": "graph",
           "x-axis": true,
+          "xaxis": {
+            "show": true
+          },
           "y-axis": true,
           "y_formats": [
             "bps",
             "short"
+          ],
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         }
       ],
@@ -250,12 +318,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(rate(statistics_traffic_tx_bytes{}[5m])*8) by (gateway) + sum(rate(statistics_traffic_rx_bytes{}[5m])*8) by (gateway)",
+              "expr": "label_replace( sum(rate(statistics_traffic{type=~\"rx|tx\"}[5m])*8) by (gateway),\"gate\",\"fastd-$3-$1\",\"gateway\",\"02:ff:(.?)f:(.?.?):7d:.?(.?)\")",
               "intervalFactor": 2,
-              "legendFormat": "{{gateway}}",
-              "metric": "statistics_traffic_tx_bytes",
+              "legendFormat": "{{gate}}",
+              "metric": "",
               "refId": "A",
-              "step": 600
+              "step": 240
             }
           ],
           "timeFrom": null,
@@ -266,13 +334,34 @@
             "shared": true,
             "value_type": "cumulative"
           },
-          "transparent": true,
+          "transparent": false,
           "type": "graph",
           "x-axis": true,
+          "xaxis": {
+            "show": true
+          },
           "y-axis": true,
           "y_formats": [
             "bps",
             "short"
+          ],
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         }
       ],
@@ -311,6 +400,8 @@
             "max": true,
             "min": true,
             "show": true,
+            "sort": "current",
+            "sortDesc": true,
             "total": false,
             "values": true
           },
@@ -328,12 +419,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(statistics_clients_total{}) by (gateway)",
+              "expr": "label_replace( sum(statistics_clients_total{}) by (gateway),\"gate\",\"$3\",\"gateway\",\"02:ff:(.?.?):(.?.?):7d:(.?.?)\" )",
               "intervalFactor": 2,
-              "legendFormat": "{{gateway}}",
+              "legendFormat": "fastd_{{gate}} ({{gateway}})",
               "metric": "statistics_clients_total",
               "refId": "A",
-              "step": 600
+              "step": 240
             }
           ],
           "timeFrom": null,
@@ -344,13 +435,34 @@
             "shared": true,
             "value_type": "cumulative"
           },
-          "transparent": true,
+          "transparent": false,
           "type": "graph",
           "x-axis": true,
+          "xaxis": {
+            "show": true
+          },
           "y-axis": true,
           "y_formats": [
             "none",
             "short"
+          ],
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         }
       ],
@@ -389,6 +501,8 @@
             "max": true,
             "min": true,
             "show": true,
+            "sort": "current",
+            "sortDesc": true,
             "total": false,
             "values": true
           },
@@ -406,12 +520,12 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "count(statistics_clients_total{}) by (gateway)",
+              "expr": "label_replace( count(statistics_clients_total{}) by (gateway),\"gate\",\"$3\",\"gateway\",\"02:ff:(.?.?):(.?.?):7d:(.?.?)\" )",
               "intervalFactor": 2,
-              "legendFormat": "{{gateway}}",
+              "legendFormat": "fastd_{{gate}} ({{gateway}})",
               "metric": "statistics_clients_total",
               "refId": "A",
-              "step": 600
+              "step": 240
             }
           ],
           "timeFrom": null,
@@ -422,293 +536,34 @@
             "shared": true,
             "value_type": "cumulative"
           },
-          "transparent": true,
+          "transparent": false,
           "type": "graph",
           "x-axis": true,
+          "xaxis": {
+            "show": true
+          },
           "y-axis": true,
           "y_formats": [
             "none",
             "short"
-          ]
-        }
-      ],
-      "title": "New row"
-    },
-    {
-      "collapse": false,
-      "editable": true,
-      "height": "300px",
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "prometheus",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "id": 6,
-          "isNew": true,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": true,
-            "min": true,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "8*sum(rate(statistics_traffic_tx_bytes[5m]))/max(meshnodes_online_total)",
-              "hide": false,
-              "intervalFactor": 2,
-              "legendFormat": "TX per node",
-              "metric": "",
-              "refId": "A",
-              "step": 600
-            },
-            {
-              "expr": "8*sum(rate(statistics_traffic_rx_bytes[5m]))/max(meshnodes_online_total)",
-              "hide": false,
-              "intervalFactor": 2,
-              "legendFormat": "RX per node",
-              "metric": "",
-              "refId": "B",
-              "step": 600
-            },
-            {
-              "expr": "8*sum(rate(statistics_traffic_rx_bytes[5m]))/max(total_clients)",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "RX per user",
-              "metric": "total_clients",
-              "refId": "C",
-              "step": 600
-            },
-            {
-              "expr": "8*sum(rate(statistics_traffic_tx_bytes[5m]))/max(total_clients)",
-              "hide": true,
-              "intervalFactor": 2,
-              "legendFormat": "TX per user",
-              "metric": "total_clients",
-              "refId": "D",
-              "step": 600
-            }
           ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Mittlerer Durchsatz pro Knoten",
-          "tooltip": {
-            "msResolution": true,
-            "shared": true,
-            "value_type": "cumulative"
-          },
-          "transparent": true,
-          "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "bps",
-            "short"
-          ]
-        }
-      ],
-      "title": "New row"
-    },
-    {
-      "collapse": false,
-      "editable": true,
-      "height": "300px",
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "prometheus",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "id": 7,
-          "isNew": true,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": true,
-            "min": true,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
+          "yaxes": [
             {
-              "expr": "8*sum(rate(statistics_traffic_tx_bytes[5m]))/max(total_clients)",
-              "hide": false,
-              "intervalFactor": 2,
-              "legendFormat": "TX per user",
-              "metric": "total_clients",
-              "refId": "C",
-              "step": 600
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
             },
             {
-              "expr": "8*sum(rate(statistics_traffic_rx_bytes[5m]))/max(total_clients)",
-              "hide": false,
-              "intervalFactor": 2,
-              "legendFormat": "RX per user",
-              "metric": "total_clients",
-              "refId": "D",
-              "step": 600
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
             }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Mittlerer Durchsatz pro Nutzer",
-          "tooltip": {
-            "msResolution": true,
-            "shared": true,
-            "value_type": "cumulative"
-          },
-          "transparent": true,
-          "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "bps",
-            "short"
-          ]
-        }
-      ],
-      "title": "New row"
-    },
-    {
-      "collapse": false,
-      "editable": true,
-      "height": "300px",
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "prometheus",
-          "editable": true,
-          "error": false,
-          "fill": 1,
-          "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
-          "id": 5,
-          "isNew": true,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": true,
-            "min": true,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sum(rate(statistics_traffic_tx_bytes{gateway=\"$supernode\"}[5m]))*8",
-              "intervalFactor": 2,
-              "legendFormat": "TX($supernode)",
-              "metric": "statistics_traffic_tx_bytes",
-              "refId": "A",
-              "step": 600
-            },
-            {
-              "expr": "sum(rate(statistics_traffic_rx_bytes{gateway=\"$supernode\"}[5m]))*8",
-              "intervalFactor": 2,
-              "legendFormat": "RX($supernode)",
-              "metric": "statistics_traffic_tx_bytes",
-              "refId": "B",
-              "step": 600
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Durchsatz (Gate#)",
-          "tooltip": {
-            "msResolution": true,
-            "shared": true,
-            "value_type": "cumulative"
-          },
-          "transparent": true,
-          "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "bps",
-            "short"
           ]
         }
       ],
@@ -716,7 +571,7 @@
     }
   ],
   "time": {
-    "from": "now-5d",
+    "from": "now-3d",
     "to": "now"
   },
   "timepicker": {
@@ -745,52 +600,34 @@
     ]
   },
   "templating": {
-    "list": [
-      {
-        "current": {
-          "tags": [],
-          "text": "02:ff:0f:10:7d:01",
-          "value": "02:ff:0f:10:7d:01"
-        },
-        "datasource": "prometheus",
-        "includeAll": false,
-        "label": "supernode",
-        "multi": false,
-        "name": "supernode",
-        "options": [
-          {
-            "selected": false,
-            "text": "02:ff:0f:01:7d:05",
-            "value": "02:ff:0f:01:7d:05"
-          },
-          {
-            "selected": true,
-            "text": "02:ff:0f:10:7d:01",
-            "value": "02:ff:0f:10:7d:01"
-          },
-          {
-            "selected": false,
-            "text": "02:ff:0f:81:7d:03",
-            "value": "02:ff:0f:81:7d:03"
-          },
-          {
-            "selected": false,
-            "text": "02:ff:2f:16:7d:04",
-            "value": "02:ff:2f:16:7d:04"
-          }
-        ],
-        "query": "statistics_traffic_tx_bytes",
-        "refresh": 0,
-        "regex": "/.*gateway=\\\"(.*)\\\",host.*/",
-        "type": "query"
-      }
-    ]
+    "list": []
   },
   "annotations": {
     "list": []
   },
   "refresh": "2h",
-  "schemaVersion": 11,
-  "version": 28,
-  "links": []
+  "schemaVersion": 12,
+  "version": 1,
+  "links": [
+    {
+      "icon": "dashboard",
+      "keepTime": true,
+      "tags": [
+        "global"
+      ],
+      "targetBlank": true,
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    },
+    {
+      "icon": "external link",
+      "tags": [],
+      "targetBlank": true,
+      "title": "ffm-RRD-stats",
+      "tooltip": "",
+      "type": "link",
+      "url": "https://sstats.ffm.freifunk.net/host.php?h=uber.ffm.freifunk.net&p=exec"
+    }
+  ]
 }

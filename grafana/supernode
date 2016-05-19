@@ -1,0 +1,234 @@
+{
+  "id": 10,
+  "title": "supernode",
+  "originalTitle": "supernode",
+  "tags": [
+    "global"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "label_replace( 8*sum(rate(statistics_traffic{gateway=~\"$supernode\",type=~\"rx|tx\"}[5m])) by (type,gateway),\"gate\",\"$3\",\"gateway\",\"02:ff:(.?.?):(.?.?):7d:(.?.?)\" )",
+              "intervalFactor": 2,
+              "legendFormat": "{{type}} fastd_{{gate}} ($supernode)",
+              "metric": "statistics_traffic_tx_bytes",
+              "refId": "A",
+              "step": 240
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Durchsatz (Gate#)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "x-axis": true,
+          "xaxis": {
+            "show": true
+          },
+          "y-axis": true,
+          "y_formats": [
+            "bps",
+            "short"
+          ],
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "time": {
+    "from": "now-3d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "02:ff:0f:73:7d:02",
+          "value": "02:ff:0f:73:7d:02"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "supernode",
+        "multi": true,
+        "name": "supernode",
+        "options": [
+          {
+            "text": "02:ff:0f:01:7d:05",
+            "value": "02:ff:0f:01:7d:05",
+            "selected": false
+          },
+          {
+            "text": "02:ff:0f:10:7d:01",
+            "value": "02:ff:0f:10:7d:01",
+            "selected": false
+          },
+          {
+            "text": "02:ff:0f:73:7d:02",
+            "value": "02:ff:0f:73:7d:02",
+            "selected": true
+          },
+          {
+            "text": "02:ff:0f:81:7d:03",
+            "value": "02:ff:0f:81:7d:03",
+            "selected": false
+          },
+          {
+            "text": "02:ff:1f:00:7d:06",
+            "value": "02:ff:1f:00:7d:06",
+            "selected": false
+          },
+          {
+            "text": "02:ff:2f:00:7d:06",
+            "value": "02:ff:2f:00:7d:06",
+            "selected": false
+          },
+          {
+            "text": "02:ff:2f:10:7d:01",
+            "value": "02:ff:2f:10:7d:01",
+            "selected": false
+          },
+          {
+            "text": "02:ff:2f:16:7d:04",
+            "value": "02:ff:2f:16:7d:04",
+            "selected": false
+          }
+        ],
+        "query": "statistics_traffic_tx_bytes",
+        "refresh": 1,
+        "regex": "/.*gateway=\\\"(.*)\\\",host.*/",
+        "type": "query"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": "2h",
+  "schemaVersion": 12,
+  "version": 0,
+  "links": [
+    {
+      "icon": "dashboard",
+      "keepTime": true,
+      "tags": [
+        "global"
+      ],
+      "targetBlank": true,
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    },
+    {
+      "icon": "external link",
+      "tags": [],
+      "targetBlank": true,
+      "title": "ffm-RRD-stats",
+      "tooltip": "",
+      "type": "link",
+      "url": "https://sstats.ffm.freifunk.net/host.php?h=uber.ffm.freifunk.net&p=exec"
+    }
+  ]
+}
