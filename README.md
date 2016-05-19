@@ -18,3 +18,7 @@ Die angepassten configs finden sich in den jeweiligen Unterverzeichnissen.
 Zur Zeit müssen ggf. die MAC Adressen der Supernodes nach einer Änderung händisch in den hopglass-server eingepflegt werden. Dies funktioniert über die Datei hopglass-server/alias.json
 
 Zukünftig könnten wir über die Verwendung von https://github.com/ffnord/ffnord-alfred-announce nachdenken, welches als respondd client auf den Supernodes läuft und diese damit "automatsich" über den hopglass-server auf die Karte bringt.
+
+## Live
+
+Zur Zeit ist diese map anzuschauen unter: http://ffffmmap.ffdus.de/
