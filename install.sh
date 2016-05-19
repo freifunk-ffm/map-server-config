@@ -26,8 +26,7 @@ exit
 
 cp hopglass/config.json /home/hopglass/hopglass/build/
 cp hopglass-server/*.json /home/hopglass/hopglass-server/
-
-cp hopglass/hopglass.service /etc/systemd/systemd/
+cp hopglass-server/hopglass.service /etc/systemd/systemd/
 systemctl enable hopglass
 systemctl start hopglass
 
