@@ -44,6 +44,8 @@ systemctl start prometheus
 cp nginx/default /etc/nginx/sites-available/
 systemctl reload nginx
 
+# now add http://localhost:9090/ as default prometheus datasource in the grafana webinterface under http://<host>/grafana
+# add the grafana dashboards under grafana/
 
 
 
