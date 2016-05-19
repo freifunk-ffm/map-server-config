@@ -1,0 +1,5002 @@
+{
+  "id": 4,
+  "title": "node-byname",
+  "originalTitle": "node-byname",
+  "tags": [],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 8,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 12,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "-Gesamt-",
+              "lines": false
+            }
+          ],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(max(statistics_clients_total{hostname=~\"$name\"}) by (hostname))",
+              "intervalFactor": 2,
+              "legendFormat": "Nutzer gesamt",
+              "metric": "statistics_clients_total",
+              "refId": "B",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Nutzer",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "450px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 12,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "scopedVars": {},
+          "seriesOverrides": [
+            {
+              "alias": "-Gesamt-",
+              "lines": false
+            }
+          ],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "max(statistics_clients_total{hostname=~\"$name\"}) by (hostname)",
+              "intervalFactor": 2,
+              "legendFormat": "{{hostname}}",
+              "metric": "statistics_clients_total",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Nutzer pro Knoten",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 3,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(rate(statistics_traffic_forward_bytes{hostname=~\"$name\"}[5m]))",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "Forward",
+              "metric": "statistics_traffic_forward_bytes",
+              "refId": "A",
+              "step": 120
+            },
+            {
+              "expr": "sum(rate(statistics_traffic_tx_bytes{hostname=~\"$name\"}[5m]))+sum(rate(statistics_traffic_mgmt_tx_bytes{hostname=~\"$name\"}[5m]))",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "TX",
+              "metric": "statistics_traffic_forward_bytes",
+              "refId": "B",
+              "step": 120
+            },
+            {
+              "expr": "sum(rate(statistics_traffic_rx_bytes{hostname=~\"$name\"}[5m]))+sum(rate(statistics_traffic_mgmt_rx_bytes{hostname=~\"$name\"}[5m]))",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "RX",
+              "metric": "statistics_traffic_forward_bytes",
+              "refId": "C",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Durchsatz (gesamt)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "Bps",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "350px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 6,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "sort": "avg",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(rate(statistics_traffic_rx_bytes{hostname=~\"$name\"}[5m])) by (hostname) + sum(rate(statistics_traffic_tx_bytes{hostname=~\"$name\"}[5m])) by (hostname) + sum(rate(statistics_traffic_mgmt_tx_bytes{hostname=~\"$name\"}[5m])) by (hostname) + sum(rate(statistics_traffic_mgmt_rx_bytes{hostname=~\"$name\"}[5m])) by (hostname)",
+              "hide": false,
+              "intervalFactor": 2,
+              "legendFormat": "{{hostname}}",
+              "refId": "D",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Durchsatz (pro Knoten)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "Bps",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "350px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": 1,
+            "threshold1Color": "rgba(255, 0, 0, 0.34)",
+            "threshold2": 5,
+            "threshold2Color": "rgba(238, 7, 7, 0.84)"
+          },
+          "id": 4,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "sort": "avg",
+            "sortDesc": false,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "png",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "max(statistics_loadavg{hostname=~\"$name\"}) by (hostname, nodeid)",
+              "intervalFactor": 2,
+              "legendFormat": "{{hostname}} ({{nodeid}})",
+              "metric": "statistics_loadavg",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Prozessor-Auslastung (pro Knoten)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "percentunit",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "450px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(255, 55, 0, 0.17)",
+            "threshold2": null,
+            "threshold2Color": "rgba(62, 255, 0, 0.15)",
+            "thresholdLine": false
+          },
+          "id": 1,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "max(statistics_uptime{hostname=~\"$name\"}) by (hostname, gateway)",
+              "intervalFactor": 2,
+              "legendFormat": "{{hostname}} ->{{gateway}}",
+              "metric": "statistics_uptime",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Laufzeit und Wahl des Gateways",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "s",
+            "short"
+          ]
+        }
+      ],
+      "title": "Row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "450px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": 1,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(255, 55, 0, 0.17)",
+            "threshold2": null,
+            "threshold2Color": "rgba(62, 255, 0, 0.15)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 7,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "avg",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "max(link_tq{source_name=~\"$name\"}) by (source_name)",
+              "intervalFactor": 2,
+              "legendFormat": "{{source_name}}",
+              "metric": "link_tq",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Verbindungsqualität (bester Wert pro Knoten)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "percentunit",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "450px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "prometheus",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": 1,
+            "leftMin": 0,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(255, 55, 0, 0.17)",
+            "threshold2": null,
+            "threshold2Color": "rgba(62, 255, 0, 0.15)",
+            "thresholdLine": false
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "link_tq{source_name=~\"$name\"}",
+              "intervalFactor": 2,
+              "legendFormat": "{{source_name}} -> {{target_name}}",
+              "metric": "link_tq",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Verbindungsqualität (alle Verbindungen)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "percentunit",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "f4f26d66cdf2",
+          "value": "f4f26d66cdf2"
+        },
+        "datasource": "prometheus",
+        "hideLabel": false,
+        "hideVariable": true,
+        "includeAll": false,
+        "label": "node",
+        "multi": true,
+        "name": "node",
+        "options": [
+          {
+            "text": "000db919f230",
+            "value": "000db919f230",
+            "selected": false
+          },
+          {
+            "text": "0015582faa87",
+            "value": "0015582faa87",
+            "selected": false
+          },
+          {
+            "text": "0019995bcad2",
+            "value": "0019995bcad2",
+            "selected": false
+          },
+          {
+            "text": "0019995bcae1",
+            "value": "0019995bcae1",
+            "selected": false
+          },
+          {
+            "text": "0019995bcb4e",
+            "value": "0019995bcb4e",
+            "selected": false
+          },
+          {
+            "text": "0019995bcba5",
+            "value": "0019995bcba5",
+            "selected": false
+          },
+          {
+            "text": "0019995bcc88",
+            "value": "0019995bcc88",
+            "selected": false
+          },
+          {
+            "text": "0019995bcc8f",
+            "value": "0019995bcc8f",
+            "selected": false
+          },
+          {
+            "text": "00199967fda1",
+            "value": "00199967fda1",
+            "selected": false
+          },
+          {
+            "text": "0024b257b8ee",
+            "value": "0024b257b8ee",
+            "selected": false
+          },
+          {
+            "text": "002719ce132c",
+            "value": "002719ce132c",
+            "selected": false
+          },
+          {
+            "text": "002719ecc2ee",
+            "value": "002719ecc2ee",
+            "selected": false
+          },
+          {
+            "text": "10feed32b0b2",
+            "value": "10feed32b0b2",
+            "selected": false
+          },
+          {
+            "text": "10feed3758e0",
+            "value": "10feed3758e0",
+            "selected": false
+          },
+          {
+            "text": "10feed375ac4",
+            "value": "10feed375ac4",
+            "selected": false
+          },
+          {
+            "text": "10feed3b4d86",
+            "value": "10feed3b4d86",
+            "selected": false
+          },
+          {
+            "text": "10feed408fc4",
+            "value": "10feed408fc4",
+            "selected": false
+          },
+          {
+            "text": "10feed780130",
+            "value": "10feed780130",
+            "selected": false
+          },
+          {
+            "text": "10feed7a5aa4",
+            "value": "10feed7a5aa4",
+            "selected": false
+          },
+          {
+            "text": "10feed7b230c",
+            "value": "10feed7b230c",
+            "selected": false
+          },
+          {
+            "text": "10feed7b28a4",
+            "value": "10feed7b28a4",
+            "selected": false
+          },
+          {
+            "text": "10feed7b3326",
+            "value": "10feed7b3326",
+            "selected": false
+          },
+          {
+            "text": "10feed89dbc6",
+            "value": "10feed89dbc6",
+            "selected": false
+          },
+          {
+            "text": "10feedb76d38",
+            "value": "10feedb76d38",
+            "selected": false
+          },
+          {
+            "text": "10feedb77c68",
+            "value": "10feedb77c68",
+            "selected": false
+          },
+          {
+            "text": "10feedb78642",
+            "value": "10feedb78642",
+            "selected": false
+          },
+          {
+            "text": "10feedb7875c",
+            "value": "10feedb7875c",
+            "selected": false
+          },
+          {
+            "text": "10feeddd3f0a",
+            "value": "10feeddd3f0a",
+            "selected": false
+          },
+          {
+            "text": "10feede5c684",
+            "value": "10feede5c684",
+            "selected": false
+          },
+          {
+            "text": "10feede5e12c",
+            "value": "10feede5e12c",
+            "selected": false
+          },
+          {
+            "text": "10feede6c9a2",
+            "value": "10feede6c9a2",
+            "selected": false
+          },
+          {
+            "text": "10feede6cb90",
+            "value": "10feede6cb90",
+            "selected": false
+          },
+          {
+            "text": "10feede6cbc0",
+            "value": "10feede6cbc0",
+            "selected": false
+          },
+          {
+            "text": "10feede6cbc8",
+            "value": "10feede6cbc8",
+            "selected": false
+          },
+          {
+            "text": "10feedf3e572",
+            "value": "10feedf3e572",
+            "selected": false
+          },
+          {
+            "text": "10feedf511fc",
+            "value": "10feedf511fc",
+            "selected": false
+          },
+          {
+            "text": "14cc2004f491",
+            "value": "14cc2004f491",
+            "selected": false
+          },
+          {
+            "text": "14cc2031f3fc",
+            "value": "14cc2031f3fc",
+            "selected": false
+          },
+          {
+            "text": "14cc2031f3fe",
+            "value": "14cc2031f3fe",
+            "selected": false
+          },
+          {
+            "text": "14cc203b5c78",
+            "value": "14cc203b5c78",
+            "selected": false
+          },
+          {
+            "text": "14cc20410627",
+            "value": "14cc20410627",
+            "selected": false
+          },
+          {
+            "text": "14cc204745ea",
+            "value": "14cc204745ea",
+            "selected": false
+          },
+          {
+            "text": "14cc2057f3bd",
+            "value": "14cc2057f3bd",
+            "selected": false
+          },
+          {
+            "text": "14cc20637d28",
+            "value": "14cc20637d28",
+            "selected": false
+          },
+          {
+            "text": "14cc20638206",
+            "value": "14cc20638206",
+            "selected": false
+          },
+          {
+            "text": "14cc206383ec",
+            "value": "14cc206383ec",
+            "selected": false
+          },
+          {
+            "text": "14cc206e11de",
+            "value": "14cc206e11de",
+            "selected": false
+          },
+          {
+            "text": "14cc206f5df6",
+            "value": "14cc206f5df6",
+            "selected": false
+          },
+          {
+            "text": "14cc206f9854",
+            "value": "14cc206f9854",
+            "selected": false
+          },
+          {
+            "text": "14cc2070fa5a",
+            "value": "14cc2070fa5a",
+            "selected": false
+          },
+          {
+            "text": "14cc2070fa8a",
+            "value": "14cc2070fa8a",
+            "selected": false
+          },
+          {
+            "text": "14cc2070fb66",
+            "value": "14cc2070fb66",
+            "selected": false
+          },
+          {
+            "text": "14cc2070fd7c",
+            "value": "14cc2070fd7c",
+            "selected": false
+          },
+          {
+            "text": "14cc20710a6a",
+            "value": "14cc20710a6a",
+            "selected": false
+          },
+          {
+            "text": "14cc2087125c",
+            "value": "14cc2087125c",
+            "selected": false
+          },
+          {
+            "text": "14cc208a1e51",
+            "value": "14cc208a1e51",
+            "selected": false
+          },
+          {
+            "text": "14cc208a1e81",
+            "value": "14cc208a1e81",
+            "selected": false
+          },
+          {
+            "text": "14cc208a3927",
+            "value": "14cc208a3927",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6a37e",
+            "value": "14cc20a6a37e",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6a4fc",
+            "value": "14cc20a6a4fc",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6b05e",
+            "value": "14cc20a6b05e",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6c36c",
+            "value": "14cc20a6c36c",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6c384",
+            "value": "14cc20a6c384",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6c40c",
+            "value": "14cc20a6c40c",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6c460",
+            "value": "14cc20a6c460",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6c49e",
+            "value": "14cc20a6c49e",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6f408",
+            "value": "14cc20a6f408",
+            "selected": false
+          },
+          {
+            "text": "14cc20a6f458",
+            "value": "14cc20a6f458",
+            "selected": false
+          },
+          {
+            "text": "14cc20b0d9e6",
+            "value": "14cc20b0d9e6",
+            "selected": false
+          },
+          {
+            "text": "14cc20b4c7a7",
+            "value": "14cc20b4c7a7",
+            "selected": false
+          },
+          {
+            "text": "14cc20b501cd",
+            "value": "14cc20b501cd",
+            "selected": false
+          },
+          {
+            "text": "14cc20c27b92",
+            "value": "14cc20c27b92",
+            "selected": false
+          },
+          {
+            "text": "14cc20c2a614",
+            "value": "14cc20c2a614",
+            "selected": false
+          },
+          {
+            "text": "14cc20c80840",
+            "value": "14cc20c80840",
+            "selected": false
+          },
+          {
+            "text": "14cc20e3b9e0",
+            "value": "14cc20e3b9e0",
+            "selected": false
+          },
+          {
+            "text": "14cc20e3b9f4",
+            "value": "14cc20e3b9f4",
+            "selected": false
+          },
+          {
+            "text": "14cc20e3bab0",
+            "value": "14cc20e3bab0",
+            "selected": false
+          },
+          {
+            "text": "14cc20e3dc0c",
+            "value": "14cc20e3dc0c",
+            "selected": false
+          },
+          {
+            "text": "14cc20e40f4c",
+            "value": "14cc20e40f4c",
+            "selected": false
+          },
+          {
+            "text": "204e7f8e3684",
+            "value": "204e7f8e3684",
+            "selected": false
+          },
+          {
+            "text": "30b5c20e8bd8",
+            "value": "30b5c20e8bd8",
+            "selected": false
+          },
+          {
+            "text": "30b5c222daa0",
+            "value": "30b5c222daa0",
+            "selected": false
+          },
+          {
+            "text": "30b5c2230fb8",
+            "value": "30b5c2230fb8",
+            "selected": false
+          },
+          {
+            "text": "30b5c22ac544",
+            "value": "30b5c22ac544",
+            "selected": false
+          },
+          {
+            "text": "30b5c22ad818",
+            "value": "30b5c22ad818",
+            "selected": false
+          },
+          {
+            "text": "30b5c238293c",
+            "value": "30b5c238293c",
+            "selected": false
+          },
+          {
+            "text": "30b5c2382c51",
+            "value": "30b5c2382c51",
+            "selected": false
+          },
+          {
+            "text": "30b5c2383c95",
+            "value": "30b5c2383c95",
+            "selected": false
+          },
+          {
+            "text": "30b5c23e7eac",
+            "value": "30b5c23e7eac",
+            "selected": false
+          },
+          {
+            "text": "30b5c2528856",
+            "value": "30b5c2528856",
+            "selected": false
+          },
+          {
+            "text": "30b5c2566461",
+            "value": "30b5c2566461",
+            "selected": false
+          },
+          {
+            "text": "30b5c26e8307",
+            "value": "30b5c26e8307",
+            "selected": false
+          },
+          {
+            "text": "30b5c26e9d14",
+            "value": "30b5c26e9d14",
+            "selected": false
+          },
+          {
+            "text": "30b5c274c296",
+            "value": "30b5c274c296",
+            "selected": false
+          },
+          {
+            "text": "30b5c27e45cc",
+            "value": "30b5c27e45cc",
+            "selected": false
+          },
+          {
+            "text": "30b5c280f8fe",
+            "value": "30b5c280f8fe",
+            "selected": false
+          },
+          {
+            "text": "30b5c2811ecc",
+            "value": "30b5c2811ecc",
+            "selected": false
+          },
+          {
+            "text": "30b5c281215c",
+            "value": "30b5c281215c",
+            "selected": false
+          },
+          {
+            "text": "30b5c28640b4",
+            "value": "30b5c28640b4",
+            "selected": false
+          },
+          {
+            "text": "30b5c2865d66",
+            "value": "30b5c2865d66",
+            "selected": false
+          },
+          {
+            "text": "30b5c2879e18",
+            "value": "30b5c2879e18",
+            "selected": false
+          },
+          {
+            "text": "30b5c2879e76",
+            "value": "30b5c2879e76",
+            "selected": false
+          },
+          {
+            "text": "30b5c2879f1a",
+            "value": "30b5c2879f1a",
+            "selected": false
+          },
+          {
+            "text": "30b5c2879fb2",
+            "value": "30b5c2879fb2",
+            "selected": false
+          },
+          {
+            "text": "30b5c29eb2ce",
+            "value": "30b5c29eb2ce",
+            "selected": false
+          },
+          {
+            "text": "30b5c29edb28",
+            "value": "30b5c29edb28",
+            "selected": false
+          },
+          {
+            "text": "30b5c29f1a64",
+            "value": "30b5c29f1a64",
+            "selected": false
+          },
+          {
+            "text": "30b5c2a9e992",
+            "value": "30b5c2a9e992",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ae42f4",
+            "value": "30b5c2ae42f4",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ae5f38",
+            "value": "30b5c2ae5f38",
+            "selected": false
+          },
+          {
+            "text": "30b5c2b865f1",
+            "value": "30b5c2b865f1",
+            "selected": false
+          },
+          {
+            "text": "30b5c2bd8582",
+            "value": "30b5c2bd8582",
+            "selected": false
+          },
+          {
+            "text": "30b5c2bf7948",
+            "value": "30b5c2bf7948",
+            "selected": false
+          },
+          {
+            "text": "30b5c2c27468",
+            "value": "30b5c2c27468",
+            "selected": false
+          },
+          {
+            "text": "30b5c2c29946",
+            "value": "30b5c2c29946",
+            "selected": false
+          },
+          {
+            "text": "30b5c2c2aca4",
+            "value": "30b5c2c2aca4",
+            "selected": false
+          },
+          {
+            "text": "30b5c2c6ab78",
+            "value": "30b5c2c6ab78",
+            "selected": false
+          },
+          {
+            "text": "30b5c2c6ce20",
+            "value": "30b5c2c6ce20",
+            "selected": false
+          },
+          {
+            "text": "30b5c2cb6510",
+            "value": "30b5c2cb6510",
+            "selected": false
+          },
+          {
+            "text": "30b5c2cb6516",
+            "value": "30b5c2cb6516",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d5c834",
+            "value": "30b5c2d5c834",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d5cda4",
+            "value": "30b5c2d5cda4",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d5e193",
+            "value": "30b5c2d5e193",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d5f11d",
+            "value": "30b5c2d5f11d",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d5f30f",
+            "value": "30b5c2d5f30f",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d5fc00",
+            "value": "30b5c2d5fc00",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d5fc30",
+            "value": "30b5c2d5fc30",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d5ff54",
+            "value": "30b5c2d5ff54",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d98528",
+            "value": "30b5c2d98528",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d98568",
+            "value": "30b5c2d98568",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d99f10",
+            "value": "30b5c2d99f10",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d9d06e",
+            "value": "30b5c2d9d06e",
+            "selected": false
+          },
+          {
+            "text": "30b5c2d9e562",
+            "value": "30b5c2d9e562",
+            "selected": false
+          },
+          {
+            "text": "30b5c2da020c",
+            "value": "30b5c2da020c",
+            "selected": false
+          },
+          {
+            "text": "30b5c2dff362",
+            "value": "30b5c2dff362",
+            "selected": false
+          },
+          {
+            "text": "30b5c2dff3c2",
+            "value": "30b5c2dff3c2",
+            "selected": false
+          },
+          {
+            "text": "30b5c2e3e994",
+            "value": "30b5c2e3e994",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ed2f7c",
+            "value": "30b5c2ed2f7c",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ed3234",
+            "value": "30b5c2ed3234",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ed37d0",
+            "value": "30b5c2ed37d0",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ee0fb4",
+            "value": "30b5c2ee0fb4",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ee398a",
+            "value": "30b5c2ee398a",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ee6db8",
+            "value": "30b5c2ee6db8",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ee7ca4",
+            "value": "30b5c2ee7ca4",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ee89ea",
+            "value": "30b5c2ee89ea",
+            "selected": false
+          },
+          {
+            "text": "30b5c2ee8daa",
+            "value": "30b5c2ee8daa",
+            "selected": false
+          },
+          {
+            "text": "54e6fcb81d19",
+            "value": "54e6fcb81d19",
+            "selected": false
+          },
+          {
+            "text": "54e6fcbb677e",
+            "value": "54e6fcbb677e",
+            "selected": false
+          },
+          {
+            "text": "54e6fce62960",
+            "value": "54e6fce62960",
+            "selected": false
+          },
+          {
+            "text": "60e327245c12",
+            "value": "60e327245c12",
+            "selected": false
+          },
+          {
+            "text": "60e3272a5f9e",
+            "value": "60e3272a5f9e",
+            "selected": false
+          },
+          {
+            "text": "60e3273678f6",
+            "value": "60e3273678f6",
+            "selected": false
+          },
+          {
+            "text": "60e3273684b8",
+            "value": "60e3273684b8",
+            "selected": false
+          },
+          {
+            "text": "60e327530406",
+            "value": "60e327530406",
+            "selected": false
+          },
+          {
+            "text": "60e327530dfe",
+            "value": "60e327530dfe",
+            "selected": false
+          },
+          {
+            "text": "60e327576806",
+            "value": "60e327576806",
+            "selected": false
+          },
+          {
+            "text": "60e32759d6ca",
+            "value": "60e32759d6ca",
+            "selected": false
+          },
+          {
+            "text": "60e32759daf6",
+            "value": "60e32759daf6",
+            "selected": false
+          },
+          {
+            "text": "60e32759ddba",
+            "value": "60e32759ddba",
+            "selected": false
+          },
+          {
+            "text": "60e32759e046",
+            "value": "60e32759e046",
+            "selected": false
+          },
+          {
+            "text": "60e32759e65e",
+            "value": "60e32759e65e",
+            "selected": false
+          },
+          {
+            "text": "60e32759e6b8",
+            "value": "60e32759e6b8",
+            "selected": false
+          },
+          {
+            "text": "60e32759ed3c",
+            "value": "60e32759ed3c",
+            "selected": false
+          },
+          {
+            "text": "60e32759ef9a",
+            "value": "60e32759ef9a",
+            "selected": false
+          },
+          {
+            "text": "60e32759efca",
+            "value": "60e32759efca",
+            "selected": false
+          },
+          {
+            "text": "60e32759fdee",
+            "value": "60e32759fdee",
+            "selected": false
+          },
+          {
+            "text": "60e32759ffa2",
+            "value": "60e32759ffa2",
+            "selected": false
+          },
+          {
+            "text": "60e3275a000e",
+            "value": "60e3275a000e",
+            "selected": false
+          },
+          {
+            "text": "60e3275a0022",
+            "value": "60e3275a0022",
+            "selected": false
+          },
+          {
+            "text": "60e3275fd7a8",
+            "value": "60e3275fd7a8",
+            "selected": false
+          },
+          {
+            "text": "60e3275fd8dc",
+            "value": "60e3275fd8dc",
+            "selected": false
+          },
+          {
+            "text": "60e3275fd918",
+            "value": "60e3275fd918",
+            "selected": false
+          },
+          {
+            "text": "60e3275ffd50",
+            "value": "60e3275ffd50",
+            "selected": false
+          },
+          {
+            "text": "60e3275ffd5c",
+            "value": "60e3275ffd5c",
+            "selected": false
+          },
+          {
+            "text": "60e32760173c",
+            "value": "60e32760173c",
+            "selected": false
+          },
+          {
+            "text": "60e327602a80",
+            "value": "60e327602a80",
+            "selected": false
+          },
+          {
+            "text": "60e327604f86",
+            "value": "60e327604f86",
+            "selected": false
+          },
+          {
+            "text": "60e327604f96",
+            "value": "60e327604f96",
+            "selected": false
+          },
+          {
+            "text": "60e32772391c",
+            "value": "60e32772391c",
+            "selected": false
+          },
+          {
+            "text": "60e32776274c",
+            "value": "60e32776274c",
+            "selected": false
+          },
+          {
+            "text": "60e327764882",
+            "value": "60e327764882",
+            "selected": false
+          },
+          {
+            "text": "60e327769c40",
+            "value": "60e327769c40",
+            "selected": false
+          },
+          {
+            "text": "60e32776a56a",
+            "value": "60e32776a56a",
+            "selected": false
+          },
+          {
+            "text": "60e32776a886",
+            "value": "60e32776a886",
+            "selected": false
+          },
+          {
+            "text": "60e32776a8e6",
+            "value": "60e32776a8e6",
+            "selected": false
+          },
+          {
+            "text": "60e32776a954",
+            "value": "60e32776a954",
+            "selected": false
+          },
+          {
+            "text": "60e32776b5da",
+            "value": "60e32776b5da",
+            "selected": false
+          },
+          {
+            "text": "60e32776b604",
+            "value": "60e32776b604",
+            "selected": false
+          },
+          {
+            "text": "60e32776b778",
+            "value": "60e32776b778",
+            "selected": false
+          },
+          {
+            "text": "60e32776ca72",
+            "value": "60e32776ca72",
+            "selected": false
+          },
+          {
+            "text": "60e32776db14",
+            "value": "60e32776db14",
+            "selected": false
+          },
+          {
+            "text": "60e32781f192",
+            "value": "60e32781f192",
+            "selected": false
+          },
+          {
+            "text": "60e32781fe52",
+            "value": "60e32781fe52",
+            "selected": false
+          },
+          {
+            "text": "60e32791b8c2",
+            "value": "60e32791b8c2",
+            "selected": false
+          },
+          {
+            "text": "60e32793b9f8",
+            "value": "60e32793b9f8",
+            "selected": false
+          },
+          {
+            "text": "60e327940db0",
+            "value": "60e327940db0",
+            "selected": false
+          },
+          {
+            "text": "60e327942cae",
+            "value": "60e327942cae",
+            "selected": false
+          },
+          {
+            "text": "60e3279aa2d2",
+            "value": "60e3279aa2d2",
+            "selected": false
+          },
+          {
+            "text": "60e3279aafca",
+            "value": "60e3279aafca",
+            "selected": false
+          },
+          {
+            "text": "60e3279f5d40",
+            "value": "60e3279f5d40",
+            "selected": false
+          },
+          {
+            "text": "60e3279f5ebe",
+            "value": "60e3279f5ebe",
+            "selected": false
+          },
+          {
+            "text": "60e3279fcf52",
+            "value": "60e3279fcf52",
+            "selected": false
+          },
+          {
+            "text": "60e3279fd01c",
+            "value": "60e3279fd01c",
+            "selected": false
+          },
+          {
+            "text": "60e327b2d694",
+            "value": "60e327b2d694",
+            "selected": false
+          },
+          {
+            "text": "60e327b2da20",
+            "value": "60e327b2da20",
+            "selected": false
+          },
+          {
+            "text": "60e327b79eb6",
+            "value": "60e327b79eb6",
+            "selected": false
+          },
+          {
+            "text": "60e327b7f75c",
+            "value": "60e327b7f75c",
+            "selected": false
+          },
+          {
+            "text": "60e327b804c4",
+            "value": "60e327b804c4",
+            "selected": false
+          },
+          {
+            "text": "60e327b81d7a",
+            "value": "60e327b81d7a",
+            "selected": false
+          },
+          {
+            "text": "60e327b85101",
+            "value": "60e327b85101",
+            "selected": false
+          },
+          {
+            "text": "60e327b8536b",
+            "value": "60e327b8536b",
+            "selected": false
+          },
+          {
+            "text": "60e327b854be",
+            "value": "60e327b854be",
+            "selected": false
+          },
+          {
+            "text": "60e327bdad4e",
+            "value": "60e327bdad4e",
+            "selected": false
+          },
+          {
+            "text": "60e327bdc8e8",
+            "value": "60e327bdc8e8",
+            "selected": false
+          },
+          {
+            "text": "60e327bdc986",
+            "value": "60e327bdc986",
+            "selected": false
+          },
+          {
+            "text": "60e327bdd6ca",
+            "value": "60e327bdd6ca",
+            "selected": false
+          },
+          {
+            "text": "60e327bdd90c",
+            "value": "60e327bdd90c",
+            "selected": false
+          },
+          {
+            "text": "60e327bdd958",
+            "value": "60e327bdd958",
+            "selected": false
+          },
+          {
+            "text": "60e327bdd9aa",
+            "value": "60e327bdd9aa",
+            "selected": false
+          },
+          {
+            "text": "60e327c6def6",
+            "value": "60e327c6def6",
+            "selected": false
+          },
+          {
+            "text": "60e327c73b98",
+            "value": "60e327c73b98",
+            "selected": false
+          },
+          {
+            "text": "60e327c79e44",
+            "value": "60e327c79e44",
+            "selected": false
+          },
+          {
+            "text": "60e327c7a08e",
+            "value": "60e327c7a08e",
+            "selected": false
+          },
+          {
+            "text": "60e327c7b01c",
+            "value": "60e327c7b01c",
+            "selected": false
+          },
+          {
+            "text": "60e327cee5b8",
+            "value": "60e327cee5b8",
+            "selected": false
+          },
+          {
+            "text": "60e327cee5de",
+            "value": "60e327cee5de",
+            "selected": false
+          },
+          {
+            "text": "60e327cf1920",
+            "value": "60e327cf1920",
+            "selected": false
+          },
+          {
+            "text": "60e327cf1ff2",
+            "value": "60e327cf1ff2",
+            "selected": false
+          },
+          {
+            "text": "60e327e6ff36",
+            "value": "60e327e6ff36",
+            "selected": false
+          },
+          {
+            "text": "60e327e70104",
+            "value": "60e327e70104",
+            "selected": false
+          },
+          {
+            "text": "60e327e703c2",
+            "value": "60e327e703c2",
+            "selected": false
+          },
+          {
+            "text": "60e327e70f3c",
+            "value": "60e327e70f3c",
+            "selected": false
+          },
+          {
+            "text": "60e327e70fea",
+            "value": "60e327e70fea",
+            "selected": false
+          },
+          {
+            "text": "60e327e71012",
+            "value": "60e327e71012",
+            "selected": false
+          },
+          {
+            "text": "60e327e72baa",
+            "value": "60e327e72baa",
+            "selected": false
+          },
+          {
+            "text": "60e327e73928",
+            "value": "60e327e73928",
+            "selected": false
+          },
+          {
+            "text": "60e327e739ae",
+            "value": "60e327e739ae",
+            "selected": false
+          },
+          {
+            "text": "60e327e73a2e",
+            "value": "60e327e73a2e",
+            "selected": false
+          },
+          {
+            "text": "60e327e740c0",
+            "value": "60e327e740c0",
+            "selected": false
+          },
+          {
+            "text": "60e327e74598",
+            "value": "60e327e74598",
+            "selected": false
+          },
+          {
+            "text": "60e327e7582a",
+            "value": "60e327e7582a",
+            "selected": false
+          },
+          {
+            "text": "60e327e75920",
+            "value": "60e327e75920",
+            "selected": false
+          },
+          {
+            "text": "60e327e75a7e",
+            "value": "60e327e75a7e",
+            "selected": false
+          },
+          {
+            "text": "60e327e7739a",
+            "value": "60e327e7739a",
+            "selected": false
+          },
+          {
+            "text": "60e327e77434",
+            "value": "60e327e77434",
+            "selected": false
+          },
+          {
+            "text": "60e327e7869c",
+            "value": "60e327e7869c",
+            "selected": false
+          },
+          {
+            "text": "60e327ed82f8",
+            "value": "60e327ed82f8",
+            "selected": false
+          },
+          {
+            "text": "60e327f513c8",
+            "value": "60e327f513c8",
+            "selected": false
+          },
+          {
+            "text": "60e327f53342",
+            "value": "60e327f53342",
+            "selected": false
+          },
+          {
+            "text": "60e327f54200",
+            "value": "60e327f54200",
+            "selected": false
+          },
+          {
+            "text": "6466b32f201e",
+            "value": "6466b32f201e",
+            "selected": false
+          },
+          {
+            "text": "6466b36f809e",
+            "value": "6466b36f809e",
+            "selected": false
+          },
+          {
+            "text": "6466b38ece98",
+            "value": "6466b38ece98",
+            "selected": false
+          },
+          {
+            "text": "6466b3903dbe",
+            "value": "6466b3903dbe",
+            "selected": false
+          },
+          {
+            "text": "6466b3a238a2",
+            "value": "6466b3a238a2",
+            "selected": false
+          },
+          {
+            "text": "6466b3c70a58",
+            "value": "6466b3c70a58",
+            "selected": false
+          },
+          {
+            "text": "6466b3ce0686",
+            "value": "6466b3ce0686",
+            "selected": false
+          },
+          {
+            "text": "6470025c10aa",
+            "value": "6470025c10aa",
+            "selected": false
+          },
+          {
+            "text": "6470025da76c",
+            "value": "6470025da76c",
+            "selected": false
+          },
+          {
+            "text": "6470027e1218",
+            "value": "6470027e1218",
+            "selected": false
+          },
+          {
+            "text": "6470028ea13e",
+            "value": "6470028ea13e",
+            "selected": false
+          },
+          {
+            "text": "6470028f577e",
+            "value": "6470028f577e",
+            "selected": false
+          },
+          {
+            "text": "647002aac750",
+            "value": "647002aac750",
+            "selected": false
+          },
+          {
+            "text": "647002c46370",
+            "value": "647002c46370",
+            "selected": false
+          },
+          {
+            "text": "647002d18bf2",
+            "value": "647002d18bf2",
+            "selected": false
+          },
+          {
+            "text": "647002d199b2",
+            "value": "647002d199b2",
+            "selected": false
+          },
+          {
+            "text": "647002f732da",
+            "value": "647002f732da",
+            "selected": false
+          },
+          {
+            "text": "666434363266",
+            "value": "666434363266",
+            "selected": false
+          },
+          {
+            "text": "687251064e72",
+            "value": "687251064e72",
+            "selected": false
+          },
+          {
+            "text": "6872512ac436",
+            "value": "6872512ac436",
+            "selected": false
+          },
+          {
+            "text": "6872512accd9",
+            "value": "6872512accd9",
+            "selected": false
+          },
+          {
+            "text": "6872512acf20",
+            "value": "6872512acf20",
+            "selected": false
+          },
+          {
+            "text": "90f65220269e",
+            "value": "90f65220269e",
+            "selected": false
+          },
+          {
+            "text": "90f65291e692",
+            "value": "90f65291e692",
+            "selected": false
+          },
+          {
+            "text": "90f652b43482",
+            "value": "90f652b43482",
+            "selected": false
+          },
+          {
+            "text": "90f652b51d0c",
+            "value": "90f652b51d0c",
+            "selected": false
+          },
+          {
+            "text": "90f652b53234",
+            "value": "90f652b53234",
+            "selected": false
+          },
+          {
+            "text": "90f652f27046",
+            "value": "90f652f27046",
+            "selected": false
+          },
+          {
+            "text": "90f652f284d2",
+            "value": "90f652f284d2",
+            "selected": false
+          },
+          {
+            "text": "a0f3c105b2a0",
+            "value": "a0f3c105b2a0",
+            "selected": false
+          },
+          {
+            "text": "a0f3c105b460",
+            "value": "a0f3c105b460",
+            "selected": false
+          },
+          {
+            "text": "a0f3c112e85a",
+            "value": "a0f3c112e85a",
+            "selected": false
+          },
+          {
+            "text": "a0f3c1654d8e",
+            "value": "a0f3c1654d8e",
+            "selected": false
+          },
+          {
+            "text": "a0f3c1759b62",
+            "value": "a0f3c1759b62",
+            "selected": false
+          },
+          {
+            "text": "a0f3c1ac6856",
+            "value": "a0f3c1ac6856",
+            "selected": false
+          },
+          {
+            "text": "a0f3c1bd5aac",
+            "value": "a0f3c1bd5aac",
+            "selected": false
+          },
+          {
+            "text": "a0f3c1d8b10a",
+            "value": "a0f3c1d8b10a",
+            "selected": false
+          },
+          {
+            "text": "a0f3c1ff51a0",
+            "value": "a0f3c1ff51a0",
+            "selected": false
+          },
+          {
+            "text": "b0487ab96f00",
+            "value": "b0487ab96f00",
+            "selected": false
+          },
+          {
+            "text": "c04a000b6cf8",
+            "value": "c04a000b6cf8",
+            "selected": false
+          },
+          {
+            "text": "c04a002d0990",
+            "value": "c04a002d0990",
+            "selected": false
+          },
+          {
+            "text": "c04a002d0a70",
+            "value": "c04a002d0a70",
+            "selected": false
+          },
+          {
+            "text": "c04a0038d58c",
+            "value": "c04a0038d58c",
+            "selected": false
+          },
+          {
+            "text": "c04a0062cf82",
+            "value": "c04a0062cf82",
+            "selected": false
+          },
+          {
+            "text": "c04a006d0c00",
+            "value": "c04a006d0c00",
+            "selected": false
+          },
+          {
+            "text": "c04a00846096",
+            "value": "c04a00846096",
+            "selected": false
+          },
+          {
+            "text": "c04a008ad3c0",
+            "value": "c04a008ad3c0",
+            "selected": false
+          },
+          {
+            "text": "c04a00a54092",
+            "value": "c04a00a54092",
+            "selected": false
+          },
+          {
+            "text": "c46e1f2b9bc6",
+            "value": "c46e1f2b9bc6",
+            "selected": false
+          },
+          {
+            "text": "c46e1f2b9cb4",
+            "value": "c46e1f2b9cb4",
+            "selected": false
+          },
+          {
+            "text": "c46e1f2da2c4",
+            "value": "c46e1f2da2c4",
+            "selected": false
+          },
+          {
+            "text": "c46e1f2da302",
+            "value": "c46e1f2da302",
+            "selected": false
+          },
+          {
+            "text": "c46e1f301002",
+            "value": "c46e1f301002",
+            "selected": false
+          },
+          {
+            "text": "c46e1f317480",
+            "value": "c46e1f317480",
+            "selected": false
+          },
+          {
+            "text": "c46e1f317bce",
+            "value": "c46e1f317bce",
+            "selected": false
+          },
+          {
+            "text": "c46e1f578762",
+            "value": "c46e1f578762",
+            "selected": false
+          },
+          {
+            "text": "c46e1f62e170",
+            "value": "c46e1f62e170",
+            "selected": false
+          },
+          {
+            "text": "c46e1f876874",
+            "value": "c46e1f876874",
+            "selected": false
+          },
+          {
+            "text": "c46e1fa22f40",
+            "value": "c46e1fa22f40",
+            "selected": false
+          },
+          {
+            "text": "c46e1fa25fee",
+            "value": "c46e1fa25fee",
+            "selected": false
+          },
+          {
+            "text": "c46e1fb2c634",
+            "value": "c46e1fb2c634",
+            "selected": false
+          },
+          {
+            "text": "c46e1fb2c654",
+            "value": "c46e1fb2c654",
+            "selected": false
+          },
+          {
+            "text": "c46e1fb627da",
+            "value": "c46e1fb627da",
+            "selected": false
+          },
+          {
+            "text": "c46e1fb684a8",
+            "value": "c46e1fb684a8",
+            "selected": false
+          },
+          {
+            "text": "c46e1fbd6d0c",
+            "value": "c46e1fbd6d0c",
+            "selected": false
+          },
+          {
+            "text": "c46e1fbd6db0",
+            "value": "c46e1fbd6db0",
+            "selected": false
+          },
+          {
+            "text": "c46e1fbd76de",
+            "value": "c46e1fbd76de",
+            "selected": false
+          },
+          {
+            "text": "c46e1fc5504a",
+            "value": "c46e1fc5504a",
+            "selected": false
+          },
+          {
+            "text": "c46e1fc701fc",
+            "value": "c46e1fc701fc",
+            "selected": false
+          },
+          {
+            "text": "c46e1fca1ddc",
+            "value": "c46e1fca1ddc",
+            "selected": false
+          },
+          {
+            "text": "c46e1fdec668",
+            "value": "c46e1fdec668",
+            "selected": false
+          },
+          {
+            "text": "c46e1fe833e4",
+            "value": "c46e1fe833e4",
+            "selected": false
+          },
+          {
+            "text": "c46e1fe833fa",
+            "value": "c46e1fe833fa",
+            "selected": false
+          },
+          {
+            "text": "c46e1ff4dce2",
+            "value": "c46e1ff4dce2",
+            "selected": false
+          },
+          {
+            "text": "c46e1ff66a84",
+            "value": "c46e1ff66a84",
+            "selected": false
+          },
+          {
+            "text": "c4e98431af8c",
+            "value": "c4e98431af8c",
+            "selected": false
+          },
+          {
+            "text": "c4e984540b37",
+            "value": "c4e984540b37",
+            "selected": false
+          },
+          {
+            "text": "c4e9847db43b",
+            "value": "c4e9847db43b",
+            "selected": false
+          },
+          {
+            "text": "c4e9847dc455",
+            "value": "c4e9847dc455",
+            "selected": false
+          },
+          {
+            "text": "c4e9847dcdc1",
+            "value": "c4e9847dcdc1",
+            "selected": false
+          },
+          {
+            "text": "c4e9847de417",
+            "value": "c4e9847de417",
+            "selected": false
+          },
+          {
+            "text": "c4e984913079",
+            "value": "c4e984913079",
+            "selected": false
+          },
+          {
+            "text": "c4e984998736",
+            "value": "c4e984998736",
+            "selected": false
+          },
+          {
+            "text": "c4e984b5d09e",
+            "value": "c4e984b5d09e",
+            "selected": false
+          },
+          {
+            "text": "c4e984b5fc72",
+            "value": "c4e984b5fc72",
+            "selected": false
+          },
+          {
+            "text": "c4e984b603f4",
+            "value": "c4e984b603f4",
+            "selected": false
+          },
+          {
+            "text": "c4e984b6061a",
+            "value": "c4e984b6061a",
+            "selected": false
+          },
+          {
+            "text": "c4e984f0b2e2",
+            "value": "c4e984f0b2e2",
+            "selected": false
+          },
+          {
+            "text": "c4e984f31128",
+            "value": "c4e984f31128",
+            "selected": false
+          },
+          {
+            "text": "c4e984f33530",
+            "value": "c4e984f33530",
+            "selected": false
+          },
+          {
+            "text": "c4e984f34cf8",
+            "value": "c4e984f34cf8",
+            "selected": false
+          },
+          {
+            "text": "c4e984f7b0cc",
+            "value": "c4e984f7b0cc",
+            "selected": false
+          },
+          {
+            "text": "c8d3a358008e",
+            "value": "c8d3a358008e",
+            "selected": false
+          },
+          {
+            "text": "c8d3a35802be",
+            "value": "c8d3a35802be",
+            "selected": false
+          },
+          {
+            "text": "e894f629859c",
+            "value": "e894f629859c",
+            "selected": false
+          },
+          {
+            "text": "e894f63f3c5c",
+            "value": "e894f63f3c5c",
+            "selected": false
+          },
+          {
+            "text": "e894f63f62e2",
+            "value": "e894f63f62e2",
+            "selected": false
+          },
+          {
+            "text": "e894f64fb5e0",
+            "value": "e894f64fb5e0",
+            "selected": false
+          },
+          {
+            "text": "e894f65097de",
+            "value": "e894f65097de",
+            "selected": false
+          },
+          {
+            "text": "e894f662f35c",
+            "value": "e894f662f35c",
+            "selected": false
+          },
+          {
+            "text": "e894f6679eea",
+            "value": "e894f6679eea",
+            "selected": false
+          },
+          {
+            "text": "e894f66816ce",
+            "value": "e894f66816ce",
+            "selected": false
+          },
+          {
+            "text": "e894f6682b34",
+            "value": "e894f6682b34",
+            "selected": false
+          },
+          {
+            "text": "e894f6683992",
+            "value": "e894f6683992",
+            "selected": false
+          },
+          {
+            "text": "e894f6783bf2",
+            "value": "e894f6783bf2",
+            "selected": false
+          },
+          {
+            "text": "e894f6786088",
+            "value": "e894f6786088",
+            "selected": false
+          },
+          {
+            "text": "e894f678742a",
+            "value": "e894f678742a",
+            "selected": false
+          },
+          {
+            "text": "e894f6907f86",
+            "value": "e894f6907f86",
+            "selected": false
+          },
+          {
+            "text": "e894f690c4f6",
+            "value": "e894f690c4f6",
+            "selected": false
+          },
+          {
+            "text": "e894f6a1f32a",
+            "value": "e894f6a1f32a",
+            "selected": false
+          },
+          {
+            "text": "e894f6ab6d12",
+            "value": "e894f6ab6d12",
+            "selected": false
+          },
+          {
+            "text": "e894f6b95334",
+            "value": "e894f6b95334",
+            "selected": false
+          },
+          {
+            "text": "e894f6cd3510",
+            "value": "e894f6cd3510",
+            "selected": false
+          },
+          {
+            "text": "e894f6cdbe64",
+            "value": "e894f6cdbe64",
+            "selected": false
+          },
+          {
+            "text": "e894f6f2ef81",
+            "value": "e894f6f2ef81",
+            "selected": false
+          },
+          {
+            "text": "e894f6f300c4",
+            "value": "e894f6f300c4",
+            "selected": false
+          },
+          {
+            "text": "e894f6f309ac",
+            "value": "e894f6f309ac",
+            "selected": false
+          },
+          {
+            "text": "e894f6f30b26",
+            "value": "e894f6f30b26",
+            "selected": false
+          },
+          {
+            "text": "e894f6f3146b",
+            "value": "e894f6f3146b",
+            "selected": false
+          },
+          {
+            "text": "e894f6f58094",
+            "value": "e894f6f58094",
+            "selected": false
+          },
+          {
+            "text": "e8de27302120",
+            "value": "e8de27302120",
+            "selected": false
+          },
+          {
+            "text": "e8de27302a42",
+            "value": "e8de27302a42",
+            "selected": false
+          },
+          {
+            "text": "e8de27302cea",
+            "value": "e8de27302cea",
+            "selected": false
+          },
+          {
+            "text": "e8de27559f94",
+            "value": "e8de27559f94",
+            "selected": false
+          },
+          {
+            "text": "e8de275fe90a",
+            "value": "e8de275fe90a",
+            "selected": false
+          },
+          {
+            "text": "e8de2765a8af",
+            "value": "e8de2765a8af",
+            "selected": false
+          },
+          {
+            "text": "e8de276d4ce6",
+            "value": "e8de276d4ce6",
+            "selected": false
+          },
+          {
+            "text": "e8de277fc27e",
+            "value": "e8de277fc27e",
+            "selected": false
+          },
+          {
+            "text": "e8de27b301ca",
+            "value": "e8de27b301ca",
+            "selected": false
+          },
+          {
+            "text": "e8de27b30550",
+            "value": "e8de27b30550",
+            "selected": false
+          },
+          {
+            "text": "e8de27b30580",
+            "value": "e8de27b30580",
+            "selected": false
+          },
+          {
+            "text": "e8de27ca9ce6",
+            "value": "e8de27ca9ce6",
+            "selected": false
+          },
+          {
+            "text": "e8de27ceb90c",
+            "value": "e8de27ceb90c",
+            "selected": false
+          },
+          {
+            "text": "e8de27dd7cee",
+            "value": "e8de27dd7cee",
+            "selected": false
+          },
+          {
+            "text": "e8de27dd878a",
+            "value": "e8de27dd878a",
+            "selected": false
+          },
+          {
+            "text": "e8de27f2ddca",
+            "value": "e8de27f2ddca",
+            "selected": false
+          },
+          {
+            "text": "e8de27f2dfd2",
+            "value": "e8de27f2dfd2",
+            "selected": false
+          },
+          {
+            "text": "e8de27ffaa01",
+            "value": "e8de27ffaa01",
+            "selected": false
+          },
+          {
+            "text": "f4ec38b7d780",
+            "value": "f4ec38b7d780",
+            "selected": false
+          },
+          {
+            "text": "f4ec38f0ff60",
+            "value": "f4ec38f0ff60",
+            "selected": false
+          },
+          {
+            "text": "f4f26d3f9adc",
+            "value": "f4f26d3f9adc",
+            "selected": false
+          },
+          {
+            "text": "f4f26d3f9b3e",
+            "value": "f4f26d3f9b3e",
+            "selected": false
+          },
+          {
+            "text": "f4f26d3fd124",
+            "value": "f4f26d3fd124",
+            "selected": false
+          },
+          {
+            "text": "f4f26d3fdf4a",
+            "value": "f4f26d3fdf4a",
+            "selected": false
+          },
+          {
+            "text": "f4f26d3ff37e",
+            "value": "f4f26d3ff37e",
+            "selected": false
+          },
+          {
+            "text": "f4f26d4041ee",
+            "value": "f4f26d4041ee",
+            "selected": false
+          },
+          {
+            "text": "f4f26d405fae",
+            "value": "f4f26d405fae",
+            "selected": false
+          },
+          {
+            "text": "f4f26d40650a",
+            "value": "f4f26d40650a",
+            "selected": false
+          },
+          {
+            "text": "f4f26d4077e8",
+            "value": "f4f26d4077e8",
+            "selected": false
+          },
+          {
+            "text": "f4f26d407f04",
+            "value": "f4f26d407f04",
+            "selected": false
+          },
+          {
+            "text": "f4f26d408020",
+            "value": "f4f26d408020",
+            "selected": false
+          },
+          {
+            "text": "f4f26d499774",
+            "value": "f4f26d499774",
+            "selected": false
+          },
+          {
+            "text": "f4f26d49f47c",
+            "value": "f4f26d49f47c",
+            "selected": false
+          },
+          {
+            "text": "f4f26d49f6f0",
+            "value": "f4f26d49f6f0",
+            "selected": false
+          },
+          {
+            "text": "f4f26d49fd1a",
+            "value": "f4f26d49fd1a",
+            "selected": false
+          },
+          {
+            "text": "f4f26d4a2664",
+            "value": "f4f26d4a2664",
+            "selected": false
+          },
+          {
+            "text": "f4f26d66cdf2",
+            "value": "f4f26d66cdf2",
+            "selected": true
+          },
+          {
+            "text": "f4f26dc1fffe",
+            "value": "f4f26dc1fffe",
+            "selected": false
+          },
+          {
+            "text": "f81a679c3572",
+            "value": "f81a679c3572",
+            "selected": false
+          },
+          {
+            "text": "f81a67a902de",
+            "value": "f81a67a902de",
+            "selected": false
+          },
+          {
+            "text": "f81a67a92253",
+            "value": "f81a67a92253",
+            "selected": false
+          },
+          {
+            "text": "f81a67d8d758",
+            "value": "f81a67d8d758",
+            "selected": false
+          },
+          {
+            "text": "f81a67ebcdf8",
+            "value": "f81a67ebcdf8",
+            "selected": false
+          },
+          {
+            "text": "f8d11123c910",
+            "value": "f8d11123c910",
+            "selected": false
+          },
+          {
+            "text": "f8d11124babc",
+            "value": "f8d11124babc",
+            "selected": false
+          },
+          {
+            "text": "f8d111408752",
+            "value": "f8d111408752",
+            "selected": false
+          },
+          {
+            "text": "f8d111422a1c",
+            "value": "f8d111422a1c",
+            "selected": false
+          },
+          {
+            "text": "f8d111523482",
+            "value": "f8d111523482",
+            "selected": false
+          },
+          {
+            "text": "f8d1119e314a",
+            "value": "f8d1119e314a",
+            "selected": false
+          },
+          {
+            "text": "f8d111a9c578",
+            "value": "f8d111a9c578",
+            "selected": false
+          },
+          {
+            "text": "f8d111b754d6",
+            "value": "f8d111b754d6",
+            "selected": false
+          }
+        ],
+        "query": "statistics_clients_total",
+        "refresh": 1,
+        "regex": "/.*nodeid=\\\"(.*)\\\".*/",
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "Chakotay + Doctor + Janeway + Kim + Tuvok + Voyager",
+          "value": [
+            "Chakotay",
+            "Doctor",
+            "Janeway",
+            "Kim",
+            "Tuvok",
+            "Voyager"
+          ]
+        },
+        "datasource": "prometheus",
+        "includeAll": false,
+        "label": "name",
+        "multi": true,
+        "name": "name",
+        "options": [
+          {
+            "text": "10feed7a5aa4",
+            "value": "10feed7a5aa4",
+            "selected": false
+          },
+          {
+            "text": "30b5c2811ecc",
+            "value": "30b5c2811ecc",
+            "selected": false
+          },
+          {
+            "text": "60437-h0ppel-1",
+            "value": "60437-h0ppel-1",
+            "selected": false
+          },
+          {
+            "text": "611FF-0005-Gruenhaus",
+            "value": "611FF-0005-Gruenhaus",
+            "selected": false
+          },
+          {
+            "text": "611FF-0006-freifunk30b5c280f8fe",
+            "value": "611FF-0006-freifunk30b5c280f8fe",
+            "selected": false
+          },
+          {
+            "text": "611FF-0010-freifunk60e32776db14",
+            "value": "611FF-0010-freifunk60e32776db14",
+            "selected": false
+          },
+          {
+            "text": "611FF-0012-freifunk60e3279fcf52",
+            "value": "611FF-0012-freifunk60e3279fcf52",
+            "selected": false
+          },
+          {
+            "text": "611FF-0013-freifunk60e327602a80",
+            "value": "611FF-0013-freifunk60e327602a80",
+            "selected": false
+          },
+          {
+            "text": "611FF-0017-freifunk60e3279fd01c",
+            "value": "611FF-0017-freifunk60e3279fd01c",
+            "selected": false
+          },
+          {
+            "text": "611FF-0018-30b5c2ae5f38-ExtAntenna",
+            "value": "611FF-0018-30b5c2ae5f38-ExtAntenna",
+            "selected": false
+          },
+          {
+            "text": "611FF-0020-C04A00846096",
+            "value": "611FF-0020-C04A00846096",
+            "selected": false
+          },
+          {
+            "text": "611FF-0022",
+            "value": "611FF-0022",
+            "selected": false
+          },
+          {
+            "text": "611FF-0023",
+            "value": "611FF-0023",
+            "selected": false
+          },
+          {
+            "text": "611FF-0024-UP1-30b5c2865d66",
+            "value": "611FF-0024-UP1-30b5c2865d66",
+            "selected": false
+          },
+          {
+            "text": "611FF-0025",
+            "value": "611FF-0025",
+            "selected": false
+          },
+          {
+            "text": "611FF-0026",
+            "value": "611FF-0026",
+            "selected": false
+          },
+          {
+            "text": "611FF-0030-a0f3c1bd5aac",
+            "value": "611FF-0030-a0f3c1bd5aac",
+            "selected": false
+          },
+          {
+            "text": "611FF-0034-60e327e74598",
+            "value": "611FF-0034-60e327e74598",
+            "selected": false
+          },
+          {
+            "text": "611FF-0034-Wanderrouter",
+            "value": "611FF-0034-Wanderrouter",
+            "selected": false
+          },
+          {
+            "text": "611FF-0035-60e327cee5de-up",
+            "value": "611FF-0035-60e327cee5de-up",
+            "selected": false
+          },
+          {
+            "text": "611FF-0400",
+            "value": "611FF-0400",
+            "selected": false
+          },
+          {
+            "text": "611FF-040a",
+            "value": "611FF-040a",
+            "selected": false
+          },
+          {
+            "text": "611FF-040b",
+            "value": "611FF-040b",
+            "selected": false
+          },
+          {
+            "text": "611FF-04S2",
+            "value": "611FF-04S2",
+            "selected": false
+          },
+          {
+            "text": "611FF-04SA",
+            "value": "611FF-04SA",
+            "selected": false
+          },
+          {
+            "text": "611FF-04SB",
+            "value": "611FF-04SB",
+            "selected": false
+          },
+          {
+            "text": "611FF-04W1",
+            "value": "611FF-04W1",
+            "selected": false
+          },
+          {
+            "text": "61FF-0404",
+            "value": "61FF-0404",
+            "selected": false
+          },
+          {
+            "text": "63150-Flipperhalle",
+            "value": "63150-Flipperhalle",
+            "selected": false
+          },
+          {
+            "text": "6466b3a238a2",
+            "value": "6466b3a238a2",
+            "selected": false
+          },
+          {
+            "text": "ALZ-Kloster1",
+            "value": "ALZ-Kloster1",
+            "selected": false
+          },
+          {
+            "text": "Adler_1",
+            "value": "Adler_1",
+            "selected": false
+          },
+          {
+            "text": "Adler_2",
+            "value": "Adler_2",
+            "selected": false
+          },
+          {
+            "text": "Arfurt-02",
+            "value": "Arfurt-02",
+            "selected": false
+          },
+          {
+            "text": "Arfurt-03",
+            "value": "Arfurt-03",
+            "selected": false
+          },
+          {
+            "text": "AsiaMax",
+            "value": "AsiaMax",
+            "selected": false
+          },
+          {
+            "text": "Atrium-Schwalbach-5",
+            "value": "Atrium-Schwalbach-5",
+            "selected": false
+          },
+          {
+            "text": "Awesome_3000",
+            "value": "Awesome_3000",
+            "selected": false
+          },
+          {
+            "text": "BDP-MTK",
+            "value": "BDP-MTK",
+            "selected": false
+          },
+          {
+            "text": "Baeckerei-Kuenkel-Karben-Cafe-Papaveri",
+            "value": "Baeckerei-Kuenkel-Karben-Cafe-Papaveri",
+            "selected": false
+          },
+          {
+            "text": "BahnsinnFreifunk",
+            "value": "BahnsinnFreifunk",
+            "selected": false
+          },
+          {
+            "text": "Beauty-Oase-Schwarz",
+            "value": "Beauty-Oase-Schwarz",
+            "selected": false
+          },
+          {
+            "text": "Biedenkopfer_weg",
+            "value": "Biedenkopfer_weg",
+            "selected": false
+          },
+          {
+            "text": "Bismarckstrasse-Freifunk",
+            "value": "Bismarckstrasse-Freifunk",
+            "selected": false
+          },
+          {
+            "text": "Bolo104_001",
+            "value": "Bolo104_001",
+            "selected": false
+          },
+          {
+            "text": "Bolo104_002",
+            "value": "Bolo104_002",
+            "selected": false
+          },
+          {
+            "text": "Bricky",
+            "value": "Bricky",
+            "selected": false
+          },
+          {
+            "text": "BuergerhausMarxheim",
+            "value": "BuergerhausMarxheim",
+            "selected": false
+          },
+          {
+            "text": "CCCFFM-FF1",
+            "value": "CCCFFM-FF1",
+            "selected": false
+          },
+          {
+            "text": "CCCFFM-FF2",
+            "value": "CCCFFM-FF2",
+            "selected": false
+          },
+          {
+            "text": "CSB-preconfig-002",
+            "value": "CSB-preconfig-002",
+            "selected": false
+          },
+          {
+            "text": "CaC-Freifunk",
+            "value": "CaC-Freifunk",
+            "selected": false
+          },
+          {
+            "text": "CalibansPrismBreak",
+            "value": "CalibansPrismBreak",
+            "selected": false
+          },
+          {
+            "text": "Chakotay",
+            "value": "Chakotay",
+            "selected": true
+          },
+          {
+            "text": "Chapel",
+            "value": "Chapel",
+            "selected": false
+          },
+          {
+            "text": "Chekov",
+            "value": "Chekov",
+            "selected": false
+          },
+          {
+            "text": "DIR-505-USB-Solar-Speisung",
+            "value": "DIR-505-USB-Solar-Speisung",
+            "selected": false
+          },
+          {
+            "text": "Diesseits",
+            "value": "Diesseits",
+            "selected": false
+          },
+          {
+            "text": "Doctor",
+            "value": "Doctor",
+            "selected": true
+          },
+          {
+            "text": "E15-CZF-Core",
+            "value": "E15-CZF-Core",
+            "selected": false
+          },
+          {
+            "text": "E15-EG-BrotundSalz",
+            "value": "E15-EG-BrotundSalz",
+            "selected": false
+          },
+          {
+            "text": "E15-UG-Bistro",
+            "value": "E15-UG-Bistro",
+            "selected": false
+          },
+          {
+            "text": "ESC425GTRM",
+            "value": "ESC425GTRM",
+            "selected": false
+          },
+          {
+            "text": "ESCGBLZ2",
+            "value": "ESCGBLZ2",
+            "selected": false
+          },
+          {
+            "text": "ESCGBLZ3",
+            "value": "ESCGBLZ3",
+            "selected": false
+          },
+          {
+            "text": "EngelsReisen_1",
+            "value": "EngelsReisen_1",
+            "selected": false
+          },
+          {
+            "text": "EngelsReisen_2",
+            "value": "EngelsReisen_2",
+            "selected": false
+          },
+          {
+            "text": "Erlangen",
+            "value": "Erlangen",
+            "selected": false
+          },
+          {
+            "text": "Ev-Friedenskirche-01",
+            "value": "Ev-Friedenskirche-01",
+            "selected": false
+          },
+          {
+            "text": "Ev-Friedenskirche-02",
+            "value": "Ev-Friedenskirche-02",
+            "selected": false
+          },
+          {
+            "text": "Ev-Gemeinde-Riedberg-Buero",
+            "value": "Ev-Gemeinde-Riedberg-Buero",
+            "selected": false
+          },
+          {
+            "text": "Ev-Gemeinde-Riedberg-Gruppenraeume",
+            "value": "Ev-Gemeinde-Riedberg-Gruppenraeume",
+            "selected": false
+          },
+          {
+            "text": "Ev-Gemeinde-Riedberg-Kirchenraum",
+            "value": "Ev-Gemeinde-Riedberg-Kirchenraum",
+            "selected": false
+          },
+          {
+            "text": "Ev-Limesgemeinde-Schwalbach-03",
+            "value": "Ev-Limesgemeinde-Schwalbach-03",
+            "selected": false
+          },
+          {
+            "text": "Ezri",
+            "value": "Ezri",
+            "selected": false
+          },
+          {
+            "text": "FF-BO-60e327b79eb6",
+            "value": "FF-BO-60e327b79eb6",
+            "selected": false
+          },
+          {
+            "text": "FFHessCon",
+            "value": "FFHessCon",
+            "selected": false
+          },
+          {
+            "text": "FFM-BATTONN",
+            "value": "FFM-BATTONN",
+            "selected": false
+          },
+          {
+            "text": "FFM-BTTNN",
+            "value": "FFM-BTTNN",
+            "selected": false
+          },
+          {
+            "text": "FFM-VormWald",
+            "value": "FFM-VormWald",
+            "selected": false
+          },
+          {
+            "text": "FFM.freifunk.net",
+            "value": "FFM.freifunk.net",
+            "selected": false
+          },
+          {
+            "text": "FFM2.freifunk",
+            "value": "FFM2.freifunk",
+            "selected": false
+          },
+          {
+            "text": "FREIFUNK-TL-WR740N-64MB-RAM-Mod",
+            "value": "FREIFUNK-TL-WR740N-64MB-RAM-Mod",
+            "selected": false
+          },
+          {
+            "text": "FW-dev-Tester",
+            "value": "FW-dev-Tester",
+            "selected": false
+          },
+          {
+            "text": "Ffm_Bonameser_Str",
+            "value": "Ffm_Bonameser_Str",
+            "selected": false
+          },
+          {
+            "text": "Free-Bernem-2",
+            "value": "Free-Bernem-2",
+            "selected": false
+          },
+          {
+            "text": "FreeWLAN_Wat",
+            "value": "FreeWLAN_Wat",
+            "selected": false
+          },
+          {
+            "text": "Freifunk",
+            "value": "Freifunk",
+            "selected": false
+          },
+          {
+            "text": "Freifunk-FFM-Sossenheim02",
+            "value": "Freifunk-FFM-Sossenheim02",
+            "selected": false
+          },
+          {
+            "text": "Freifunk-Rote-Warte",
+            "value": "Freifunk-Rote-Warte",
+            "selected": false
+          },
+          {
+            "text": "Freifunk-TK-Langen",
+            "value": "Freifunk-TK-Langen",
+            "selected": false
+          },
+          {
+            "text": "Freifunk-Usingen",
+            "value": "Freifunk-Usingen",
+            "selected": false
+          },
+          {
+            "text": "Freifunk_ApartmenthotelSonne",
+            "value": "Freifunk_ApartmenthotelSonne",
+            "selected": false
+          },
+          {
+            "text": "Freifunk_FFM_Peter_Immel",
+            "value": "Freifunk_FFM_Peter_Immel",
+            "selected": false
+          },
+          {
+            "text": "Freifunk_FFM_Peter_Immel_Back",
+            "value": "Freifunk_FFM_Peter_Immel_Back",
+            "selected": false
+          },
+          {
+            "text": "FrogBox.China.1",
+            "value": "FrogBox.China.1",
+            "selected": false
+          },
+          {
+            "text": "FrogBox.OF.1",
+            "value": "FrogBox.OF.1",
+            "selected": false
+          },
+          {
+            "text": "FrogBox.OF.10",
+            "value": "FrogBox.OF.10",
+            "selected": false
+          },
+          {
+            "text": "FrogBox.OF.2",
+            "value": "FrogBox.OF.2",
+            "selected": false
+          },
+          {
+            "text": "FrogBox.OF.3",
+            "value": "FrogBox.OF.3",
+            "selected": false
+          },
+          {
+            "text": "FrogBox.OF.5",
+            "value": "FrogBox.OF.5",
+            "selected": false
+          },
+          {
+            "text": "FrogBox.OF.6",
+            "value": "FrogBox.OF.6",
+            "selected": false
+          },
+          {
+            "text": "FrogBox.OF.8",
+            "value": "FrogBox.OF.8",
+            "selected": false
+          },
+          {
+            "text": "Fuchstanz",
+            "value": "Fuchstanz",
+            "selected": false
+          },
+          {
+            "text": "Fuchstanz2",
+            "value": "Fuchstanz2",
+            "selected": false
+          },
+          {
+            "text": "Futro-FW-Tester",
+            "value": "Futro-FW-Tester",
+            "selected": false
+          },
+          {
+            "text": "Gaussstrasse_Offenbach_Charly",
+            "value": "Gaussstrasse_Offenbach_Charly",
+            "selected": false
+          },
+          {
+            "text": "Gaussstrasse_Offenbach_FB",
+            "value": "Gaussstrasse_Offenbach_FB",
+            "selected": false
+          },
+          {
+            "text": "Genesis",
+            "value": "Genesis",
+            "selected": false
+          },
+          {
+            "text": "Gremp_Freifunk",
+            "value": "Gremp_Freifunk",
+            "selected": false
+          },
+          {
+            "text": "GrueneMainTaunus_KGS",
+            "value": "GrueneMainTaunus_KGS",
+            "selected": false
+          },
+          {
+            "text": "Happyness",
+            "value": "Happyness",
+            "selected": false
+          },
+          {
+            "text": "Haukes_Freifunk_1",
+            "value": "Haukes_Freifunk_1",
+            "selected": false
+          },
+          {
+            "text": "Ilia",
+            "value": "Ilia",
+            "selected": false
+          },
+          {
+            "text": "Janeway",
+            "value": "Janeway",
+            "selected": true
+          },
+          {
+            "text": "KIZGallus-Klaus",
+            "value": "KIZGallus-Klaus",
+            "selected": false
+          },
+          {
+            "text": "KIZGallusFamilienrestaurant",
+            "value": "KIZGallusFamilienrestaurant",
+            "selected": false
+          },
+          {
+            "text": "Kaiserstr_Offenbach",
+            "value": "Kaiserstr_Offenbach",
+            "selected": false
+          },
+          {
+            "text": "KiTa-Riedberg",
+            "value": "KiTa-Riedberg",
+            "selected": false
+          },
+          {
+            "text": "KiTa-Riedberg-Erna-Pinner-Strasse",
+            "value": "KiTa-Riedberg-Erna-Pinner-Strasse",
+            "selected": false
+          },
+          {
+            "text": "Kim",
+            "value": "Kim",
+            "selected": true
+          },
+          {
+            "text": "Kirk",
+            "value": "Kirk",
+            "selected": false
+          },
+          {
+            "text": "Laeuft_bei_uns",
+            "value": "Laeuft_bei_uns",
+            "selected": false
+          },
+          {
+            "text": "Limesgemeinde-Test-1",
+            "value": "Limesgemeinde-Test-1",
+            "selected": false
+          },
+          {
+            "text": "Limesgemeinde-Test-2",
+            "value": "Limesgemeinde-Test-2",
+            "selected": false
+          },
+          {
+            "text": "Luckys",
+            "value": "Luckys",
+            "selected": false
+          },
+          {
+            "text": "Magneto",
+            "value": "Magneto",
+            "selected": false
+          },
+          {
+            "text": "Magnus-Offloader-Test-01",
+            "value": "Magnus-Offloader-Test-01",
+            "selected": false
+          },
+          {
+            "text": "Maintal_Dgh_Altstadt_001",
+            "value": "Maintal_Dgh_Altstadt_001",
+            "selected": false
+          },
+          {
+            "text": "McCoy",
+            "value": "McCoy",
+            "selected": false
+          },
+          {
+            "text": "Metropol-Sauna",
+            "value": "Metropol-Sauna",
+            "selected": false
+          },
+          {
+            "text": "NCC-1701-D",
+            "value": "NCC-1701-D",
+            "selected": false
+          },
+          {
+            "text": "NHPD2",
+            "value": "NHPD2",
+            "selected": false
+          },
+          {
+            "text": "NaturheilpraxisAmDeutschherrnufer",
+            "value": "NaturheilpraxisAmDeutschherrnufer",
+            "selected": false
+          },
+          {
+            "text": "Nerys",
+            "value": "Nerys",
+            "selected": false
+          },
+          {
+            "text": "Neumannstrasse_73-1_freifunk-ffm",
+            "value": "Neumannstrasse_73-1_freifunk-ffm",
+            "selected": false
+          },
+          {
+            "text": "Neumannstrasse_73_freifunk-ffm",
+            "value": "Neumannstrasse_73_freifunk-ffm",
+            "selected": false
+          },
+          {
+            "text": "Oberhoechstadt.01",
+            "value": "Oberhoechstadt.01",
+            "selected": false
+          },
+          {
+            "text": "Oberhoechstadt.02",
+            "value": "Oberhoechstadt.02",
+            "selected": false
+          },
+          {
+            "text": "Oberhoechstadt.Eiscafe.San.Marco",
+            "value": "Oberhoechstadt.Eiscafe.San.Marco",
+            "selected": false
+          },
+          {
+            "text": "Oberhoechstadt.RK",
+            "value": "Oberhoechstadt.RK",
+            "selected": false
+          },
+          {
+            "text": "Oberhoechstadt.RK2",
+            "value": "Oberhoechstadt.RK2",
+            "selected": false
+          },
+          {
+            "text": "Offenbach-Gaussstrasse",
+            "value": "Offenbach-Gaussstrasse",
+            "selected": false
+          },
+          {
+            "text": "Offenbach_Leibnizstrasse_Markusplatz",
+            "value": "Offenbach_Leibnizstrasse_Markusplatz",
+            "selected": false
+          },
+          {
+            "text": "Oliver.Frank.Supporters.Meshnode",
+            "value": "Oliver.Frank.Supporters.Meshnode",
+            "selected": false
+          },
+          {
+            "text": "Oliver.Frank.Supporters.Uplink",
+            "value": "Oliver.Frank.Supporters.Uplink",
+            "selected": false
+          },
+          {
+            "text": "OuterSpace",
+            "value": "OuterSpace",
+            "selected": false
+          },
+          {
+            "text": "PhilippsCPE210",
+            "value": "PhilippsCPE210",
+            "selected": false
+          },
+          {
+            "text": "PhilippsHinterhof",
+            "value": "PhilippsHinterhof",
+            "selected": false
+          },
+          {
+            "text": "Picard",
+            "value": "Picard",
+            "selected": false
+          },
+          {
+            "text": "Piraten-Frankfurt-Ostend1",
+            "value": "Piraten-Frankfurt-Ostend1",
+            "selected": false
+          },
+          {
+            "text": "Piraten-Frankfurt-Ostend2",
+            "value": "Piraten-Frankfurt-Ostend2",
+            "selected": false
+          },
+          {
+            "text": "Quark",
+            "value": "Quark",
+            "selected": false
+          },
+          {
+            "text": "Rhaban-Froehlich-Strasse-9-Eschersheim",
+            "value": "Rhaban-Froehlich-Strasse-9-Eschersheim",
+            "selected": false
+          },
+          {
+            "text": "Riedberg01",
+            "value": "Riedberg01",
+            "selected": false
+          },
+          {
+            "text": "Riker",
+            "value": "Riker",
+            "selected": false
+          },
+          {
+            "text": "Rn8kRe6mkc5QkRtd",
+            "value": "Rn8kRe6mkc5QkRtd",
+            "selected": false
+          },
+          {
+            "text": "Rossdorfer-Fechenheimer",
+            "value": "Rossdorfer-Fechenheimer",
+            "selected": false
+          },
+          {
+            "text": "Rossdorfer-Mainkur",
+            "value": "Rossdorfer-Mainkur",
+            "selected": false
+          },
+          {
+            "text": "SALZ_Rosbach",
+            "value": "SALZ_Rosbach",
+            "selected": false
+          },
+          {
+            "text": "Salzgitter_Katzenhaus_42",
+            "value": "Salzgitter_Katzenhaus_42",
+            "selected": false
+          },
+          {
+            "text": "Sarek",
+            "value": "Sarek",
+            "selected": false
+          },
+          {
+            "text": "Schwalbach-Atrium-1",
+            "value": "Schwalbach-Atrium-1",
+            "selected": false
+          },
+          {
+            "text": "Schwalbach-Atrium-2",
+            "value": "Schwalbach-Atrium-2",
+            "selected": false
+          },
+          {
+            "text": "Schwalbach-Atrium-3",
+            "value": "Schwalbach-Atrium-3",
+            "selected": false
+          },
+          {
+            "text": "Schwalbach-Atrium-4",
+            "value": "Schwalbach-Atrium-4",
+            "selected": false
+          },
+          {
+            "text": "Scott",
+            "value": "Scott",
+            "selected": false
+          },
+          {
+            "text": "SevenOfNine",
+            "value": "SevenOfNine",
+            "selected": false
+          },
+          {
+            "text": "SpessartOne",
+            "value": "SpessartOne",
+            "selected": false
+          },
+          {
+            "text": "Spock",
+            "value": "Spock",
+            "selected": false
+          },
+          {
+            "text": "Sulu",
+            "value": "Sulu",
+            "selected": false
+          },
+          {
+            "text": "Sybok",
+            "value": "Sybok",
+            "selected": false
+          },
+          {
+            "text": "TLGUEST",
+            "value": "TLGUEST",
+            "selected": false
+          },
+          {
+            "text": "Tribble",
+            "value": "Tribble",
+            "selected": false
+          },
+          {
+            "text": "Tuvok",
+            "value": "Tuvok",
+            "selected": true
+          },
+          {
+            "text": "Uhura",
+            "value": "Uhura",
+            "selected": false
+          },
+          {
+            "text": "Unterkunft-Schwalbach",
+            "value": "Unterkunft-Schwalbach",
+            "selected": false
+          },
+          {
+            "text": "Unterkunft-Schwalbach2",
+            "value": "Unterkunft-Schwalbach2",
+            "selected": false
+          },
+          {
+            "text": "Voyager",
+            "value": "Voyager",
+            "selected": true
+          },
+          {
+            "text": "WBS_1",
+            "value": "WBS_1",
+            "selected": false
+          },
+          {
+            "text": "WBW-01",
+            "value": "WBW-01",
+            "selected": false
+          },
+          {
+            "text": "Wingert1519",
+            "value": "Wingert1519",
+            "selected": false
+          },
+          {
+            "text": "Zoo_und_Co_Borsigallee",
+            "value": "Zoo_und_Co_Borsigallee",
+            "selected": false
+          },
+          {
+            "text": "autohaus-gruber",
+            "value": "autohaus-gruber",
+            "selected": false
+          },
+          {
+            "text": "bonames_ff0001",
+            "value": "bonames_ff0001",
+            "selected": false
+          },
+          {
+            "text": "cafe-metzgerei",
+            "value": "cafe-metzgerei",
+            "selected": false
+          },
+          {
+            "text": "caleano.com-dev-505",
+            "value": "caleano.com-dev-505",
+            "selected": false
+          },
+          {
+            "text": "candc-one",
+            "value": "candc-one",
+            "selected": false
+          },
+          {
+            "text": "candc-two",
+            "value": "candc-two",
+            "selected": false
+          },
+          {
+            "text": "cccffm-4refugees",
+            "value": "cccffm-4refugees",
+            "selected": false
+          },
+          {
+            "text": "dapor",
+            "value": "dapor",
+            "selected": false
+          },
+          {
+            "text": "f5-kel-up",
+            "value": "f5-kel-up",
+            "selected": false
+          },
+          {
+            "text": "f5-kel-up2",
+            "value": "f5-kel-up2",
+            "selected": false
+          },
+          {
+            "text": "ff-ffm-2f40",
+            "value": "ff-ffm-2f40",
+            "selected": false
+          },
+          {
+            "text": "ff-kelsterbach-pirat-02",
+            "value": "ff-kelsterbach-pirat-02",
+            "selected": false
+          },
+          {
+            "text": "ff-kelsterbach-pirat-03",
+            "value": "ff-kelsterbach-pirat-03",
+            "selected": false
+          },
+          {
+            "text": "ffffm-Steckenpferdchen",
+            "value": "ffffm-Steckenpferdchen",
+            "selected": false
+          },
+          {
+            "text": "ffm-Neuhof-7C_dev",
+            "value": "ffm-Neuhof-7C_dev",
+            "selected": false
+          },
+          {
+            "text": "ffm-roedelheim01",
+            "value": "ffm-roedelheim01",
+            "selected": false
+          },
+          {
+            "text": "ffm_Eckenh_Rapp_a0f3c112e85a",
+            "value": "ffm_Eckenh_Rapp_a0f3c112e85a",
+            "selected": false
+          },
+          {
+            "text": "ffm_Wieland_b0487ab96f00",
+            "value": "ffm_Wieland_b0487ab96f00",
+            "selected": false
+          },
+          {
+            "text": "ffmff-CWG",
+            "value": "ffmff-CWG",
+            "selected": false
+          },
+          {
+            "text": "ffmff-Cafe_am_Goldschmiedehaus",
+            "value": "ffmff-Cafe_am_Goldschmiedehaus",
+            "selected": false
+          },
+          {
+            "text": "ffmff-DBH",
+            "value": "ffmff-DBH",
+            "selected": false
+          },
+          {
+            "text": "ffmff-Ekro00",
+            "value": "ffmff-Ekro00",
+            "selected": false
+          },
+          {
+            "text": "ffmff-Ekro01",
+            "value": "ffmff-Ekro01",
+            "selected": false
+          },
+          {
+            "text": "ffmff-Ekro02",
+            "value": "ffmff-Ekro02",
+            "selected": false
+          },
+          {
+            "text": "ffmff-Goldmarie",
+            "value": "ffmff-Goldmarie",
+            "selected": false
+          },
+          {
+            "text": "ffmff-Hofbrauhaus",
+            "value": "ffmff-Hofbrauhaus",
+            "selected": false
+          },
+          {
+            "text": "ffmff-Sandeldamm",
+            "value": "ffmff-Sandeldamm",
+            "selected": false
+          },
+          {
+            "text": "ffmff-newben02",
+            "value": "ffmff-newben02",
+            "selected": false
+          },
+          {
+            "text": "franzt",
+            "value": "franzt",
+            "selected": false
+          },
+          {
+            "text": "franzt1",
+            "value": "franzt1",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feed375ac4",
+            "value": "freifunk-10feed375ac4",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feed3b4d86",
+            "value": "freifunk-10feed3b4d86",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feed7b230c",
+            "value": "freifunk-10feed7b230c",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feedb76d38",
+            "value": "freifunk-10feedb76d38",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feedb77c68",
+            "value": "freifunk-10feedb77c68",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feedb7875c",
+            "value": "freifunk-10feedb7875c",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feede5c684",
+            "value": "freifunk-10feede5c684",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feede6cb90",
+            "value": "freifunk-10feede6cb90",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feede6cbc0",
+            "value": "freifunk-10feede6cbc0",
+            "selected": false
+          },
+          {
+            "text": "freifunk-10feede6cbc8",
+            "value": "freifunk-10feede6cbc8",
+            "selected": false
+          },
+          {
+            "text": "freifunk-123456789",
+            "value": "freifunk-123456789",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc2031f3fe-Gruenfunker-2",
+            "value": "freifunk-14cc2031f3fe-Gruenfunker-2",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc2057f3bd",
+            "value": "freifunk-14cc2057f3bd",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc206e11de",
+            "value": "freifunk-14cc206e11de",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc2070fa5a-Gruenfunker1",
+            "value": "freifunk-14cc2070fa5a-Gruenfunker1",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc2070fb66",
+            "value": "freifunk-14cc2070fb66",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20710a6a",
+            "value": "freifunk-14cc20710a6a",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc208a1e51",
+            "value": "freifunk-14cc208a1e51",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc208a1e81",
+            "value": "freifunk-14cc208a1e81",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc208a3927",
+            "value": "freifunk-14cc208a3927",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20a6a37e",
+            "value": "freifunk-14cc20a6a37e",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20a6a4fc",
+            "value": "freifunk-14cc20a6a4fc",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20a6c36c",
+            "value": "freifunk-14cc20a6c36c",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20a6c384",
+            "value": "freifunk-14cc20a6c384",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20a6c40c",
+            "value": "freifunk-14cc20a6c40c",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20a6c49e",
+            "value": "freifunk-14cc20a6c49e",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20a6f408",
+            "value": "freifunk-14cc20a6f408",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20b4c7a7",
+            "value": "freifunk-14cc20b4c7a7",
+            "selected": false
+          },
+          {
+            "text": "freifunk-14cc20b501cd",
+            "value": "freifunk-14cc20b501cd",
+            "selected": false
+          },
+          {
+            "text": "freifunk-30b5c2382c51",
+            "value": "freifunk-30b5c2382c51",
+            "selected": false
+          },
+          {
+            "text": "freifunk-30b5c2b865f1",
+            "value": "freifunk-30b5c2b865f1",
+            "selected": false
+          },
+          {
+            "text": "freifunk-30b5c2c6ce20",
+            "value": "freifunk-30b5c2c6ce20",
+            "selected": false
+          },
+          {
+            "text": "freifunk-30b5c2dff362",
+            "value": "freifunk-30b5c2dff362",
+            "selected": false
+          },
+          {
+            "text": "freifunk-30b5c2ee0fb4",
+            "value": "freifunk-30b5c2ee0fb4",
+            "selected": false
+          },
+          {
+            "text": "freifunk-5016862_a",
+            "value": "freifunk-5016862_a",
+            "selected": false
+          },
+          {
+            "text": "freifunk-6466b38ece98",
+            "value": "freifunk-6466b38ece98",
+            "selected": false
+          },
+          {
+            "text": "freifunk-6466b3903dbe",
+            "value": "freifunk-6466b3903dbe",
+            "selected": false
+          },
+          {
+            "text": "freifunk-6470028ea13e",
+            "value": "freifunk-6470028ea13e",
+            "selected": false
+          },
+          {
+            "text": "freifunk-90f65220269e",
+            "value": "freifunk-90f65220269e",
+            "selected": false
+          },
+          {
+            "text": "freifunk-90f652b51d0c",
+            "value": "freifunk-90f652b51d0c",
+            "selected": false
+          },
+          {
+            "text": "freifunk-90f652b53234",
+            "value": "freifunk-90f652b53234",
+            "selected": false
+          },
+          {
+            "text": "freifunk-90f652f284d2",
+            "value": "freifunk-90f652f284d2",
+            "selected": false
+          },
+          {
+            "text": "freifunk-BlaueTaube01",
+            "value": "freifunk-BlaueTaube01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Dreieich-e8de277fc27e",
+            "value": "freifunk-Dreieich-e8de277fc27e",
+            "selected": false
+          },
+          {
+            "text": "freifunk-FruehlingTV",
+            "value": "freifunk-FruehlingTV",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Harheim-01",
+            "value": "freifunk-Harheim-01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Huegelstr162",
+            "value": "freifunk-Huegelstr162",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Langenselbold",
+            "value": "freifunk-Langenselbold",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Langenselbold04",
+            "value": "freifunk-Langenselbold04",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Maintal01",
+            "value": "freifunk-Maintal01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Maintal02",
+            "value": "freifunk-Maintal02",
+            "selected": false
+          },
+          {
+            "text": "freifunk-SandhoeferAllee",
+            "value": "freifunk-SandhoeferAllee",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Scheffe",
+            "value": "freifunk-Scheffe",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Sossenheim-01",
+            "value": "freifunk-Sossenheim-01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-StanleyDiamond",
+            "value": "freifunk-StanleyDiamond",
+            "selected": false
+          },
+          {
+            "text": "freifunk-Zoom",
+            "value": "freifunk-Zoom",
+            "selected": false
+          },
+          {
+            "text": "freifunk-boenstadt-1",
+            "value": "freifunk-boenstadt-1",
+            "selected": false
+          },
+          {
+            "text": "freifunk-boenstadt-2",
+            "value": "freifunk-boenstadt-2",
+            "selected": false
+          },
+          {
+            "text": "freifunk-bsh-1",
+            "value": "freifunk-bsh-1",
+            "selected": false
+          },
+          {
+            "text": "freifunk-c04a006d0c00",
+            "value": "freifunk-c04a006d0c00",
+            "selected": false
+          },
+          {
+            "text": "freifunk-c46e1f301002",
+            "value": "freifunk-c46e1f301002",
+            "selected": false
+          },
+          {
+            "text": "freifunk-c46e1f876874",
+            "value": "freifunk-c46e1f876874",
+            "selected": false
+          },
+          {
+            "text": "freifunk-dev-30b5c2ee398a",
+            "value": "freifunk-dev-30b5c2ee398a",
+            "selected": false
+          },
+          {
+            "text": "freifunk-e894f66816ce",
+            "value": "freifunk-e894f66816ce",
+            "selected": false
+          },
+          {
+            "text": "freifunk-e894f6f3146b",
+            "value": "freifunk-e894f6f3146b",
+            "selected": false
+          },
+          {
+            "text": "freifunk-e8de27302120",
+            "value": "freifunk-e8de27302120",
+            "selected": false
+          },
+          {
+            "text": "freifunk-e8de27302a42",
+            "value": "freifunk-e8de27302a42",
+            "selected": false
+          },
+          {
+            "text": "freifunk-e8de27302cea",
+            "value": "freifunk-e8de27302cea",
+            "selected": false
+          },
+          {
+            "text": "freifunk-e8de27b30550",
+            "value": "freifunk-e8de27b30550",
+            "selected": false
+          },
+          {
+            "text": "freifunk-e8de27b30580",
+            "value": "freifunk-e8de27b30580",
+            "selected": false
+          },
+          {
+            "text": "freifunk-e8de27ffaa01",
+            "value": "freifunk-e8de27ffaa01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-eschborn-c4e984998736",
+            "value": "freifunk-eschborn-c4e984998736",
+            "selected": false
+          },
+          {
+            "text": "freifunk-eschborn-e8de27ca9ce6",
+            "value": "freifunk-eschborn-e8de27ca9ce6",
+            "selected": false
+          },
+          {
+            "text": "freifunk-f81a679c3572",
+            "value": "freifunk-f81a679c3572",
+            "selected": false
+          },
+          {
+            "text": "freifunk-f8d11124babc",
+            "value": "freifunk-f8d11124babc",
+            "selected": false
+          },
+          {
+            "text": "freifunk-farm-mesh",
+            "value": "freifunk-farm-mesh",
+            "selected": false
+          },
+          {
+            "text": "freifunk-ffm-eschersheim-01",
+            "value": "freifunk-ffm-eschersheim-01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-ffm-ginnheim-01",
+            "value": "freifunk-ffm-ginnheim-01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-ffm-west-1",
+            "value": "freifunk-ffm-west-1",
+            "selected": false
+          },
+          {
+            "text": "freifunk-haardtwaldstr",
+            "value": "freifunk-haardtwaldstr",
+            "selected": false
+          },
+          {
+            "text": "freifunk-htk-fdorf1",
+            "value": "freifunk-htk-fdorf1",
+            "selected": false
+          },
+          {
+            "text": "freifunk-htk-fdorf2",
+            "value": "freifunk-htk-fdorf2",
+            "selected": false
+          },
+          {
+            "text": "freifunk-ju24",
+            "value": "freifunk-ju24",
+            "selected": false
+          },
+          {
+            "text": "freifunk-kaichen",
+            "value": "freifunk-kaichen",
+            "selected": false
+          },
+          {
+            "text": "freifunk-kaichen-2",
+            "value": "freifunk-kaichen-2",
+            "selected": false
+          },
+          {
+            "text": "freifunk-kelsterbach-zini01",
+            "value": "freifunk-kelsterbach-zini01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-kiosk-das-investment",
+            "value": "freifunk-kiosk-das-investment",
+            "selected": false
+          },
+          {
+            "text": "freifunk-kn17",
+            "value": "freifunk-kn17",
+            "selected": false
+          },
+          {
+            "text": "freifunk-kulturbunker",
+            "value": "freifunk-kulturbunker",
+            "selected": false
+          },
+          {
+            "text": "freifunk-kulturprojekt21",
+            "value": "freifunk-kulturprojekt21",
+            "selected": false
+          },
+          {
+            "text": "freifunk-mobile",
+            "value": "freifunk-mobile",
+            "selected": false
+          },
+          {
+            "text": "freifunk-neu-isenburg",
+            "value": "freifunk-neu-isenburg",
+            "selected": false
+          },
+          {
+            "text": "freifunk-niederrad-aa346",
+            "value": "freifunk-niederrad-aa346",
+            "selected": false
+          },
+          {
+            "text": "freifunk-offenbach-an-den-eichen",
+            "value": "freifunk-offenbach-an-den-eichen",
+            "selected": false
+          },
+          {
+            "text": "freifunk-physio-frei.de",
+            "value": "freifunk-physio-frei.de",
+            "selected": false
+          },
+          {
+            "text": "freifunk-rndm1",
+            "value": "freifunk-rndm1",
+            "selected": false
+          },
+          {
+            "text": "freifunk-rndm2",
+            "value": "freifunk-rndm2",
+            "selected": false
+          },
+          {
+            "text": "freifunk-stattcafe",
+            "value": "freifunk-stattcafe",
+            "selected": false
+          },
+          {
+            "text": "freifunk-stierstadt-01",
+            "value": "freifunk-stierstadt-01",
+            "selected": false
+          },
+          {
+            "text": "freifunk-treehouse",
+            "value": "freifunk-treehouse",
+            "selected": false
+          },
+          {
+            "text": "freifunk.caleano.com",
+            "value": "freifunk.caleano.com",
+            "selected": false
+          },
+          {
+            "text": "freifunk.caleano.com-dev",
+            "value": "freifunk.caleano.com-dev",
+            "selected": false
+          },
+          {
+            "text": "freifunk.caleano.com-dev-unten",
+            "value": "freifunk.caleano.com-dev-unten",
+            "selected": false
+          },
+          {
+            "text": "freifunk10feed3758e0",
+            "value": "freifunk10feed3758e0",
+            "selected": false
+          },
+          {
+            "text": "freifunk10feed408fc4",
+            "value": "freifunk10feed408fc4",
+            "selected": false
+          },
+          {
+            "text": "freifunk14cc204745ea",
+            "value": "freifunk14cc204745ea",
+            "selected": false
+          },
+          {
+            "text": "freifunk14cc206f9854",
+            "value": "freifunk14cc206f9854",
+            "selected": false
+          },
+          {
+            "text": "freifunk14cc20a6c460",
+            "value": "freifunk14cc20a6c460",
+            "selected": false
+          },
+          {
+            "text": "freifunk204e7f8e3684",
+            "value": "freifunk204e7f8e3684",
+            "selected": false
+          },
+          {
+            "text": "freifunk2SandhoeferAllee",
+            "value": "freifunk2SandhoeferAllee",
+            "selected": false
+          },
+          {
+            "text": "freifunk30b5c2230fb8",
+            "value": "freifunk30b5c2230fb8",
+            "selected": false
+          },
+          {
+            "text": "freifunk30b5c2c6ab78",
+            "value": "freifunk30b5c2c6ab78",
+            "selected": false
+          },
+          {
+            "text": "freifunk30b5c2d5ff54",
+            "value": "freifunk30b5c2d5ff54",
+            "selected": false
+          },
+          {
+            "text": "freifunk30b5c2dff3c2",
+            "value": "freifunk30b5c2dff3c2",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327245c12",
+            "value": "freifunk60e327245c12",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327530406",
+            "value": "freifunk60e327530406",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327530dfe",
+            "value": "freifunk60e327530dfe",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327576806",
+            "value": "freifunk60e327576806",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759d6ca",
+            "value": "freifunk60e32759d6ca",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759daf6",
+            "value": "freifunk60e32759daf6",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759ddba",
+            "value": "freifunk60e32759ddba",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759e046",
+            "value": "freifunk60e32759e046",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759e65e",
+            "value": "freifunk60e32759e65e",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759e6b8",
+            "value": "freifunk60e32759e6b8",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759ed3c",
+            "value": "freifunk60e32759ed3c",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759ef9a",
+            "value": "freifunk60e32759ef9a",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32759efca",
+            "value": "freifunk60e32759efca",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327604f86",
+            "value": "freifunk60e327604f86",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327764882",
+            "value": "freifunk60e327764882",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32776b604",
+            "value": "freifunk60e32776b604",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e32776ca72",
+            "value": "freifunk60e32776ca72",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e3279f5d40",
+            "value": "freifunk60e3279f5d40",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e3279f5ebe",
+            "value": "freifunk60e3279f5ebe",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327b2d694",
+            "value": "freifunk60e327b2d694",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327c7b01c",
+            "value": "freifunk60e327c7b01c",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327cf1920",
+            "value": "freifunk60e327cf1920",
+            "selected": false
+          },
+          {
+            "text": "freifunk60e327e7582a",
+            "value": "freifunk60e327e7582a",
+            "selected": false
+          },
+          {
+            "text": "freifunk6466b32f201e",
+            "value": "freifunk6466b32f201e",
+            "selected": false
+          },
+          {
+            "text": "freifunk6470025da76c",
+            "value": "freifunk6470025da76c",
+            "selected": false
+          },
+          {
+            "text": "freifunk647002aac750-611FF",
+            "value": "freifunk647002aac750-611FF",
+            "selected": false
+          },
+          {
+            "text": "freifunk647002f732da",
+            "value": "freifunk647002f732da",
+            "selected": false
+          },
+          {
+            "text": "freifunk_EAM2_Friedrichsdorf",
+            "value": "freifunk_EAM2_Friedrichsdorf",
+            "selected": false
+          },
+          {
+            "text": "freifunk_EmK_Friedrichsdorf",
+            "value": "freifunk_EmK_Friedrichsdorf",
+            "selected": false
+          },
+          {
+            "text": "freifunk_Musikschule_Friedrichsdorf",
+            "value": "freifunk_Musikschule_Friedrichsdorf",
+            "selected": false
+          },
+          {
+            "text": "freifunk_Wieland_f4ec38b7d780",
+            "value": "freifunk_Wieland_f4ec38b7d780",
+            "selected": false
+          },
+          {
+            "text": "freifunk_kahl_Backhaus_001",
+            "value": "freifunk_kahl_Backhaus_001",
+            "selected": false
+          },
+          {
+            "text": "freifunk_kelsterbach_spare1",
+            "value": "freifunk_kelsterbach_spare1",
+            "selected": false
+          },
+          {
+            "text": "freifunk_lindenhoehe",
+            "value": "freifunk_lindenhoehe",
+            "selected": false
+          },
+          {
+            "text": "freifunk_rs_1",
+            "value": "freifunk_rs_1",
+            "selected": false
+          },
+          {
+            "text": "freifunk_rs_2",
+            "value": "freifunk_rs_2",
+            "selected": false
+          },
+          {
+            "text": "freifunk_welcome_24816",
+            "value": "freifunk_welcome_24816",
+            "selected": false
+          },
+          {
+            "text": "freifunk_welcome_481632",
+            "value": "freifunk_welcome_481632",
+            "selected": false
+          },
+          {
+            "text": "freifunkc46e1fa25fee",
+            "value": "freifunkc46e1fa25fee",
+            "selected": false
+          },
+          {
+            "text": "freifunkc46e1fb2c634",
+            "value": "freifunkc46e1fb2c634",
+            "selected": false
+          },
+          {
+            "text": "freifunkc46e1fb2c654",
+            "value": "freifunkc46e1fb2c654",
+            "selected": false
+          },
+          {
+            "text": "freifunkc46e1fb684a8",
+            "value": "freifunkc46e1fb684a8",
+            "selected": false
+          },
+          {
+            "text": "freifunkc46e1fc701fc",
+            "value": "freifunkc46e1fc701fc",
+            "selected": false
+          },
+          {
+            "text": "freifunkc4e9847dc455",
+            "value": "freifunkc4e9847dc455",
+            "selected": false
+          },
+          {
+            "text": "freifunkc4e984f33530",
+            "value": "freifunkc4e984f33530",
+            "selected": false
+          },
+          {
+            "text": "freifunkc4e984f34cf8",
+            "value": "freifunkc4e984f34cf8",
+            "selected": false
+          },
+          {
+            "text": "freifunke894f6786088",
+            "value": "freifunke894f6786088",
+            "selected": false
+          },
+          {
+            "text": "freifunke894f6ab6d12",
+            "value": "freifunke894f6ab6d12",
+            "selected": false
+          },
+          {
+            "text": "freifunke8de27dd7cee",
+            "value": "freifunke8de27dd7cee",
+            "selected": false
+          },
+          {
+            "text": "freifunkf4f26dc1fffe",
+            "value": "freifunkf4f26dc1fffe",
+            "selected": false
+          },
+          {
+            "text": "freifunkfalk",
+            "value": "freifunkfalk",
+            "selected": false
+          },
+          {
+            "text": "freifunkffm-tuts",
+            "value": "freifunkffm-tuts",
+            "selected": false
+          },
+          {
+            "text": "freifunkweisel1",
+            "value": "freifunkweisel1",
+            "selected": false
+          },
+          {
+            "text": "fuzzylogic",
+            "value": "fuzzylogic",
+            "selected": false
+          },
+          {
+            "text": "heidenfelderAntennen",
+            "value": "heidenfelderAntennen",
+            "selected": false
+          },
+          {
+            "text": "interocitor",
+            "value": "interocitor",
+            "selected": false
+          },
+          {
+            "text": "kh-snark",
+            "value": "kh-snark",
+            "selected": false
+          },
+          {
+            "text": "kh1-log",
+            "value": "kh1-log",
+            "selected": false
+          },
+          {
+            "text": "kh1-m",
+            "value": "kh1-m",
+            "selected": false
+          },
+          {
+            "text": "kh1-rega",
+            "value": "kh1-rega",
+            "selected": false
+          },
+          {
+            "text": "kh1-regb",
+            "value": "kh1-regb",
+            "selected": false
+          },
+          {
+            "text": "kh1-roga",
+            "value": "kh1-roga",
+            "selected": false
+          },
+          {
+            "text": "kh1-rogb",
+            "value": "kh1-rogb",
+            "selected": false
+          },
+          {
+            "text": "kh2-kg",
+            "value": "kh2-kg",
+            "selected": false
+          },
+          {
+            "text": "kh2-og",
+            "value": "kh2-og",
+            "selected": false
+          },
+          {
+            "text": "kreuzaecker",
+            "value": "kreuzaecker",
+            "selected": false
+          },
+          {
+            "text": "kulturbunker-mesh1",
+            "value": "kulturbunker-mesh1",
+            "selected": false
+          },
+          {
+            "text": "meerholz-schwarzerlich",
+            "value": "meerholz-schwarzerlich",
+            "selected": false
+          },
+          {
+            "text": "meg-frankfurt-1OG",
+            "value": "meg-frankfurt-1OG",
+            "selected": false
+          },
+          {
+            "text": "meg-frankfurt-eg",
+            "value": "meg-frankfurt-eg",
+            "selected": false
+          },
+          {
+            "text": "peter-immel-vorne",
+            "value": "peter-immel-vorne",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-ap-1og-1",
+            "value": "qlh-ah-ap-1og-1",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-ap-1og-2",
+            "value": "qlh-ah-ap-1og-2",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-ap-1og-3",
+            "value": "qlh-ah-ap-1og-3",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-ap-2og-1",
+            "value": "qlh-ah-ap-2og-1",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-ap-2og-2",
+            "value": "qlh-ah-ap-2og-2",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-ap-eg-1",
+            "value": "qlh-ah-ap-eg-1",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-ap-eg-2",
+            "value": "qlh-ah-ap-eg-2",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-core-1og",
+            "value": "qlh-ah-core-1og",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-core-2og",
+            "value": "qlh-ah-core-2og",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-core-eg",
+            "value": "qlh-ah-core-eg",
+            "selected": false
+          },
+          {
+            "text": "qlh-ah-offloader",
+            "value": "qlh-ah-offloader",
+            "selected": false
+          },
+          {
+            "text": "qlh-offloader-2",
+            "value": "qlh-offloader-2",
+            "selected": false
+          },
+          {
+            "text": "raumwerk",
+            "value": "raumwerk",
+            "selected": false
+          },
+          {
+            "text": "rossdorf-00",
+            "value": "rossdorf-00",
+            "selected": false
+          },
+          {
+            "text": "segafredo-skyline-plaza",
+            "value": "segafredo-skyline-plaza",
+            "selected": false
+          },
+          {
+            "text": "sn1-h",
+            "value": "sn1-h",
+            "selected": false
+          },
+          {
+            "text": "vdsl-news.de_master",
+            "value": "vdsl-news.de_master",
+            "selected": false
+          },
+          {
+            "text": "whp26-inet",
+            "value": "whp26-inet",
+            "selected": false
+          },
+          {
+            "text": "wombat.of.00",
+            "value": "wombat.of.00",
+            "selected": false
+          },
+          {
+            "text": "wombat.of.01",
+            "value": "wombat.of.01",
+            "selected": false
+          },
+          {
+            "text": "wombat.of.02",
+            "value": "wombat.of.02",
+            "selected": false
+          },
+          {
+            "text": "wpbb",
+            "value": "wpbb",
+            "selected": false
+          },
+          {
+            "text": "wpbd",
+            "value": "wpbd",
+            "selected": false
+          },
+          {
+            "text": "wpbk",
+            "value": "wpbk",
+            "selected": false
+          },
+          {
+            "text": "wpbn",
+            "value": "wpbn",
+            "selected": false
+          },
+          {
+            "text": "wpbt",
+            "value": "wpbt",
+            "selected": false
+          }
+        ],
+        "query": "statistics_clients_total",
+        "refresh": 1,
+        "regex": "/.*hostname=\\\"(.*)\\\",in.*/",
+        "type": "query"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": "30m",
+  "schemaVersion": 11,
+  "version": 26,
+  "links": []
+}
