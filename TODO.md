@@ -7,6 +7,7 @@
 
 ### Abschaltung der aktuellen map? Offene Punkte
 
-- Anpassung von https://api.ffm.freifunk.net/ff-frankfurt.json bzgl location von nodes.json oder symlink auf unserer Seite?
-- Anpassung von http://www.freifunk-karte.de/ (/hopglass/nodelist.json)
+- Anpassung https://api.ffm.freifunk.net/ff-frankfurt.json bzgl location von nodes.json
+- Anpassung von http://www.freifunk-karte.de/ auf /hopglass/nodelist.json
 - Übergangsweise Link von /data/nodes.json auf /hopglass/????.json <-- welches file reproduziert im hopglass das ffmap-nodes.json?
+- Anpassung https://github.com/t-8ch/freifunk-scripts/blob/master/nodes2zone.py an /hopglass/nodes.json
