@@ -1,4 +1,4 @@
-### Veröffentlichung der Aktuellen map? Offene Punkte
+### Veröffentlichung der neuen map? Offene Punkte
 
 - dns records hopglass.ffm.freifunk.net / ssl Einrichten (in progress)
 - redundate fastd tunnel
