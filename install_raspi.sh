@@ -1,5 +1,9 @@
 #!/bin/bash
 
+### This script assumes that you have a recent raspbian stretch w/o batman14
+### This script will install batman14 and hence possibly downgrade the kernel to 1.1.19
+### prior to then installing the map
+
 ### SYSTEM ###
 
 apt update
