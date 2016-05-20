@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### This script assumes that you have an up to date debian etch with a working bat0 interface.
+
 ### SYSTEM (debian etch) ###
 
 apt update
