@@ -43,8 +43,9 @@ rmmmod batman_adv
 modprobe batman_adv
 echo "batman_adv" >> /etc/modules
 
-wget https://downloads.open-mesh.org/batman/stable/sources/batctl/batctl-2013.4.0.tar.gz
-tar -xvzf batctl-2013.4.0.tar.gz
+#wget https://downloads.open-mesh.org/batman/stable/sources/batctl/batctl-2013.4.0.tar.gz
+#tar -xvzf batctl-2013.4.0.tar.gz
+apt-get source batctl=2013.4.0-1
 cd batctl-2013.4.0
 make
 make install
