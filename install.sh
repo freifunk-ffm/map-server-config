@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### This script assumes that you have an up to date debian etch with a working bat0 interface.
+
 ### SYSTEM (debian etch) ###
 
 apt update
@@ -25,6 +27,7 @@ node_modules/.bin/grunt
 exit
 
 cp hopglass/config.json /home/hopglass/hopglass/build/
+# this step assumes that you have a bat0 interface
 cp hopglass-server/*.json /home/hopglass/hopglass-server/
 cp hopglass-server/hopglass.service /etc/systemd/system/
 systemctl enable hopglass
@@ -44,6 +47,8 @@ systemctl start prometheus
 cp nginx/default /etc/nginx/sites-available/
 systemctl reload nginx
 
+# now add http://localhost:9090/ as default prometheus datasource in the grafana webinterface under http://<host>/grafana
+# add the grafana dashboards under grafana/
 
 
 

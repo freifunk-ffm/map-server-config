@@ -1,5 +1,9 @@
 #!/bin/bash
 
+### This script assumes that you have a recent raspbian stretch w/o batman14
+### This script will install batman14 and hence possibly downgrade the kernel to 1.1.19
+### prior to then installing the map
+
 ### SYSTEM ###
 
 apt update
@@ -39,8 +43,9 @@ rmmmod batman_adv
 modprobe batman_adv
 echo "batman_adv" >> /etc/modules
 
-wget https://downloads.open-mesh.org/batman/stable/sources/batctl/batctl-2013.4.0.tar.gz
-tar -xvzf batctl-2013.4.0.tar.gz
+#wget https://downloads.open-mesh.org/batman/stable/sources/batctl/batctl-2013.4.0.tar.gz
+#tar -xvzf batctl-2013.4.0.tar.gz
+apt-get source batctl=2013.4.0-1
 cd batctl-2013.4.0
 make
 make install

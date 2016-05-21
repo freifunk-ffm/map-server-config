@@ -15,9 +15,19 @@ Die angepassten configs finden sich in den jeweiligen Unterverzeichnissen.
 
 ## Wartung
 
-Zur Zeit müssen ggf. die MAC Adressen der Supernodes nach einer Änderung händisch in den hopglass-server eingepflegt werden. Dies funktioniert über die Datei hopglass-server/alias.json
+Änderungen bitte per Diskussion im PR
 
-Zukünftig könnten wir über die Verwendung von https://github.com/ffnord/ffnord-alfred-announce nachdenken, welches als respondd client auf den Supernodes läuft und diese damit "automatsich" über den hopglass-server auf die Karte bringt.
+## Issues
+
+Zur Zeit müssen ggf. die MAC Adressen der Supernodes nach einer Änderung händisch in den hopglass-server eingepflegt werden. Dies funktioniert über die Datei [hopglass-server/alias.json](hopglass-server/alias.json)
+
+Diskussion: https://github.com/freifunk-ffm/map-server-config/issues/2
+
+Zukünftig könnten wir über die Verwendung von https://github.com/ffnord/ffnord-alfred-announce nachdenken, welches als respondd client auf den Supernodes läuft und diese damit "automatisch" über den hopglass-server auf die Karte bringt.
+
+## FFFFM-features
+
+z.Zt gibt es per [hopglass-server/alias.json](hopglass-server/alias.json) eine MAC-basierte differenzierte Visualisierung der je zwei verwendeten fastd Instanzen pro supernode.
 
 ## Live
 
