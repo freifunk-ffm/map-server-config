@@ -1,5 +1,6 @@
 ### Veröffentlichung der neuen map? Offene Punkte
 
+- ssl: automatische verlängerung der Zertifikate
 - dns records hopglass.ffm.freifunk.net / ssl Einrichten (done)
 - redundate fastd tunnel (done)
 - hopglass-server einrichten (done)
