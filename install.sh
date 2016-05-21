@@ -45,14 +45,9 @@ systemctl enable prometheus
 systemctl start prometheus
 
 cp nginx/default /etc/nginx/sites-available/
+cp nginx/hopglass.ffm.freifunk.net.conf /etc/nginx/sites-available/
+ln -s /etc/nginx/sites-available/hopglass.ffm.freifunk.net.conf /etc/nginx/sites-enabled/hopglass.ffm.freifunk.net.conf
 systemctl reload nginx
 
 # now add http://localhost:9090/ as default prometheus datasource in the grafana webinterface under http://<host>/grafana
 # add the grafana dashboards under grafana/
-
-
-
-
-
-
-
