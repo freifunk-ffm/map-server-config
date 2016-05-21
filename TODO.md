@@ -2,7 +2,7 @@
 
 - dns records hopglass.ffm.freifunk.net / ssl Einrichten (in progress)
 - redundate fastd tunnel
-- hopglass-server einrichten
+- hopglass-server einrichten (done)
 - mac-Adressen Generierung auf den fastd's verstehen (done)
 
 ### Abschaltung der aktuellen map? Offene Punkte
