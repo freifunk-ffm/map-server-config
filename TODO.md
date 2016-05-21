@@ -1,7 +1,7 @@
 ### Veröffentlichung der neuen map? Offene Punkte
 
-- dns records hopglass.ffm.freifunk.net / ssl Einrichten (in progress)
-- redundate fastd tunnel
+- dns records hopglass.ffm.freifunk.net / ssl Einrichten (done)
+- redundate fastd tunnel (bisher nur fastd3)
 - hopglass-server einrichten (done)
 - mac-Adressen Generierung auf den fastd's verstehen (done)
 
