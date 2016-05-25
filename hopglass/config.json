@@ -7,52 +7,15 @@
   "showContact": true,
   "maxAge": 14,
   "mapLayers": [
-    { "name": "MapQuest",
-      "url": "https://otile{s}-s.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg",
-      "config": {
-        "subdomains": "1234",
-        "type": "osm",
-        "attribution": "Tiles &copy; <a href=\"https://www.mapquest.com/\" target=\"_blank\">MapQuest</a>, Data CC-BY-SA OpenStreetMap",
-        "maxZoom": 18
-      }
-    },
-    { "name": "OSM Standard",
-      "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      "config": {
-        "type": "osm", 
-        "attribution": "<a target=\"_blank\" href=\"http://www.openstreetmap.org/\">Karte hergestellt aus OpenStreetMap-Daten</a> | <a rel=\"license\" target=\"_blank\" href=\"http://opendatacommons.org/licenses/odbl/\">Open Database License (ODbL)</a>",
-        "maxZoom": 19
-      }
-    },
-    { "name": "OSM deutscher Stil",
-      "url": "http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png",
-      "config": {
-        "type": "osm",
-        "attribution": "<a target=\"_blank\" href=\"http://www.openstreetmap.org/\">Karte hergestellt aus OpenStreetMap-Daten</a> | <a rel=\"license\" target=\"_blank\" href=\"http://opendatacommons.org/licenses/odbl/\">Open Database License (ODbL)</a>",
-        "maxZoom": 18
-      }
-    },
-    { "name": "Mapbox (Sat)",
-      "url": "https://c.tiles.mapbox.com/v3/tmcw.map-j5fsp01s/{z}/{x}/{y}.png",
-      "config": {
-        "type": "",
-        "attribution": "Tiles &copy; <a href=\"https://www.mapbox.com/\" target=\"_blank\">MapQuest</a>",
-        "maxZoom": 19
-      }
-    },
-    { "name": "MapQuest open aerial",
-      "url": "http://oatile1.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png",
-      "config": {
-        "type": "osm",
-        "attribution": "Tiles &copy; <a href=\"https://www.mapbox.com/\" target=\"_blank\">MapQuest</a>",
-        "maxZoom": 11
-      }
-    }
+    { "name": "MapQuestOpen.OSM" },
+    { "name": "OpenStreetMap.HOT" },
+    { "name": "OpenStreetMap.Mapnik" },
+    { "name": "OpenStreetMap.DE" },
+    { "name": "Stamen.TonerLite" },
+    { "name": "Esri.WorldImagery" }
   ],
   "siteNames": [
-    { "site": "ffda", "name": "Freifunk Darmstadt" },
-    { "site": "ffffm", "name": "Freifunk Frankfurt" },
-    { "site": "ffwi", "name": "Freifunk Wiesbaden" }
+    { "site": "ffffm", "name": "Freifunk Frankfurt" }
   ],
   "hwImg": [
     { "thumbnail": "https://cdn.rawgit.com/Moorviper/meshviewer_hwpics/master/nodes/{MODELHASH}.svg", "caption": "Knoten {MODELHASH}" }
