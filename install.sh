@@ -17,13 +17,13 @@ systemctl enable hopglass-server@default
 
 ### HOPGLASS
 
-cd /opt/hopglass
+pushd /opt/hopglass
 git clone https://github.com/plumpudding/hopglass
 cd hopglass
 npm install
 npm install grunt-cli
 node_modules/.bin/grunt
-cd
+popd
 cp hopglass/config.json /opt/hopglass/hopglass/build/
 
 #### GRAFANA & PROMETHEUS ####
@@ -37,6 +37,7 @@ cp prometheus/prometheus.yml /etc/prometheus/
 systemctl enable prometheus
 systemctl start prometheus
 
+# you need an ip6 "::1" localhost entry in /etc/hosts as /hopglass is not listening on v4
 cp nginx/default /etc/nginx/sites-available/
 cp nginx/hopglass.ffm.freifunk.net.conf /etc/nginx/sites-available/
 ln -s /etc/nginx/sites-available/hopglass.ffm.freifunk.net.conf /etc/nginx/sites-enabled/hopglass.ffm.freifunk.net.conf
