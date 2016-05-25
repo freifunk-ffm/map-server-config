@@ -9,7 +9,7 @@ apt install nodejs npm ruby-sass prometheus grafana nginx
 
 ### HOPGLASS-SERVER 
 
-wget https://raw.githubusercontent.com/plumpudding/hopglass-server/v0.1/scripts/bootstrap.sh; bash bootstrap.sh; rm bootstrap.sh
+wget https://raw.githubusercontent.com/plumpudding/hopglass-server/v0.1.1/scripts/bootstrap.sh; bash bootstrap.sh; rm bootstrap.sh
 # this step assumes that you have a bat0 interface. Otherwise change the config.json accordingly (e.g. to "br0")
 cp hopglass-server/*.json /etc/hopglass-server/default/
 systemctl start hopglass-server@default
