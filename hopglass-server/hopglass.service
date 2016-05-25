@@ -6,7 +6,7 @@ User=hopglass
 Group=hopglass
 Restart=always
 WorkingDirectory=/home/hopglass/hopglass-server
-ExecStart=/usr/bin/nodejs hopglass-server.js
+ExecStart=/usr/bin/nodejs hopglass-server.js --config config.json
 
 RestartSec=10
 StandardOutput=syslog
