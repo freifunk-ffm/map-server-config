@@ -1,10 +1,47 @@
 {
-  "nodeinfoInterval": 500,
-  "statisticsInterval": 60,
-  "collectorport": 45123,
-  "webip": "::",
-  "webport": 4000,
-  "ifaces": "bat0",
-  "targetip": "ff02::1",
-  "targetport": 1001
+  "core": { },
+  "receiver": {
+    "receivers": [
+      { "module": "announced",
+        "config": {
+          "target": {
+            "ip": "ff02::1",
+            "port": 1001
+          },
+          "port": 45123,
+          "interval": {
+            "statistics": 60,
+            "nodeinfo": 500
+          }
+        },
+        "overlay": false
+      },
+      { "module": "aliases",
+        "config": {
+          "file": "./aliases.json"
+        },
+        "overlay": true
+      }
+    ],
+    "ifaces": [
+      "br0"
+    ],
+    "storage": {
+      "interval": 300,
+      "file": "./raw.json"
+    },
+    "purge": {
+      "maxAge": 14,
+      "interval": 86400
+    }
+  },
+  "provider": {
+    "offlineTime": 900,
+    "metricsOfflineTime": 60,
+    "ffapiPath": "./ffapi/"
+  },
+  "webserver": {
+    "ip": "::1",
+    "port": 4000
+  }
 }

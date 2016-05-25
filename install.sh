@@ -7,31 +7,24 @@
 apt update
 apt install nodejs npm ruby-sass prometheus grafana nginx
 
-### HOPGLASS (copy paste from hopglass(-server) doku on github) ####
+### HOPGLASS-SERVER 
 
-#Create a user
-useradd -mU hopglass
-su - hopglass
+wget https://raw.githubusercontent.com/plumpudding/hopglass-server/v0.1/scripts/bootstrap.sh; bash bootstrap.sh; rm bootstrap.sh
+# this step assumes that you have a bat0 interface. Otherwise change the config.json accordingly (e.g. to "br0")
+cp hopglass-server/*.json /etc/hopglass-server/default/
+systemctl start hopglass-server@default
+systemctl enable hopglass-server@default
 
-#Clone and install dependencies
-git clone https://github.com/plumpudding/hopglass-server
-cd hopglass-server
-npm install
-cd
+### HOPGLASS
+
+cd /opt/hopglass
 git clone https://github.com/plumpudding/hopglass
 cd hopglass
 npm install
 npm install grunt-cli
 node_modules/.bin/grunt
-
-exit
-
-cp hopglass/config.json /home/hopglass/hopglass/build/
-# this step assumes that you have a bat0 interface
-cp hopglass-server/*.json /home/hopglass/hopglass-server/
-cp hopglass-server/hopglass.service /etc/systemd/system/
-systemctl enable hopglass
-systemctl start hopglass
+cd
+cp hopglass/config.json /opt/hopglass/hopglass/build/
 
 #### GRAFANA & PROMETHEUS ####
 
@@ -48,11 +41,4 @@ cp nginx/default /etc/nginx/sites-available/
 systemctl reload nginx
 
 # now add http://localhost:9090/ as default prometheus datasource in the grafana webinterface under http://<host>/grafana
-# add the grafana dashboards under grafana/
-
-
-
-
-
-
-
+# add the grafana dashboards in the grafana/ folder of this project
