@@ -24,7 +24,7 @@
       }
     ],
     "ifaces": [
-      "br0"
+      "bat0"
     ],
     "storage": {
       "interval": 300,
