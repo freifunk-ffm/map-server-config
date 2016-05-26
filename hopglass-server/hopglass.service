@@ -1,0 +1,17 @@
+[Unit]
+Description=start hopglass server
+
+[Service]
+User=hopglass
+Group=hopglass
+Restart=always
+WorkingDirectory=/home/hopglass/hopglass-server
+ExecStart=/usr/bin/nodejs hopglass-server.js
+
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=hopglass-server
+
+[Install]
+WantedBy=multi-user.target
