@@ -7,12 +7,12 @@
   "showContact": true,
   "maxAge": 14,
   "mapLayers": [
-    { "name": "MapQuestOpen.OSM" },
     { "name": "OpenStreetMap.HOT" },
     { "name": "OpenStreetMap.Mapnik" },
     { "name": "OpenStreetMap.DE" },
     { "name": "Stamen.TonerLite" },
-    { "name": "Esri.WorldImagery" }
+    { "name": "Esri.WorldImagery" },
+    { "name": "MapQuestOpen.OSM" }
   ],
   "siteNames": [
     { "site": "ffffm", "name": "Freifunk Frankfurt" }
