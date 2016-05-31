@@ -38,7 +38,27 @@
   "provider": {
     "offlineTime": 900,
     "metricsOfflineTime": 60,
-    "ffapiPath": "./ffapi/"
+    "ffapiPath": "./ffapi/",
+    "named": {
+      "mapTemplate":  "https://hopglass.ffm.freifunk.net/#!v:g;n:{node_id}",
+      "origin":       "nodes.freifunk.t-8ch.de.",
+      "defaultTtl":   86400,
+      "ns":           "ns1.t-8ch.de.",
+      "postmaster":   "freifunk+dns.t-8ch.de.",
+      "refresh":      28800,
+      "retry":        7200,
+      "expire":       864000,
+      "minTtl":       86400,
+      "nameservers":  [
+        "ns1.t-8ch.de.",
+        "ns2.t-8ch.de."
+      ],
+      "subdomainNet": [
+        "fddd:5d16:b5dd:0::/64",
+        "2001:1a50:11:4::/64"
+      ],
+      "namePadding" : 40
+    }
   },
   "webserver": {
     "ip": "::1",
