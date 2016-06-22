@@ -1453,7 +1453,7 @@
             {
               "expr": "label_replace(max(statistics_uptime{hostname=~\"$node\"}) by (hostname, gateway),\"gate\",\"$2\",\"gateway\",\"02:ff:(.?f:.?.?):7d:(.?.?)\")",
               "intervalFactor": 2,
-              "legendFormat": "{{hostname}} -> fastd{{gate}}",
+              "legendFormat": "{{hostname}} -> fastd{{gate}} ({{gateway}})",
               "metric": "statistics_uptime",
               "refId": "A",
               "step": 120
@@ -1462,7 +1462,7 @@
               "expr": "label_replace(max(statistics_uptime{nodeid=~\"$node\"}) by (hostname, gateway),\"gate\",\"$2\",\"gateway\",\"02:ff:(.?f:.?.?):7d:(.?.?)\")",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{hostname}} -> fastd{{gate}}",
+              "legendFormat": "{{hostname}} -> fastd{{gate}} ({{gateway}})",
               "metric": "statistics_uptime",
               "refId": "B",
               "step": 120
