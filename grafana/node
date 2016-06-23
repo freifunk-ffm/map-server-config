@@ -1566,7 +1566,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "max(link_tq{source_name=~\"$node\",link_type=\"wireless\"} or link_tq{target_name=~\"$node\",link_type=\"wireless\"}) by (source_name)",
+              "expr": "max(link_tq{source_name=~\"$node\",target_name=~\"$node\",link_type=\"wireless\"}) by (source_name)",
               "intervalFactor": 2,
               "legendFormat": "{{source_name}}",
               "metric": "link_tq",
@@ -1574,7 +1574,7 @@
               "step": 120
             },
             {
-              "expr": "max(link_tq{source=~\"$node\",link_type=\"wireless\"} or link_tq{target=~\"$node\",link_type=\"wireless\"}) by (source_name)",
+              "expr": "max(link_tq{source=~\"$node\",target=~\"$node\",link_type=\"wireless\"}) by (source_name)",
               "intervalFactor": 2,
               "legendFormat": "{{source_name}}",
               "metric": "link_tq",
