@@ -1680,7 +1680,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "link_tq{source_name=~\"$node\"} or link_tq{target_name=~\"$node\"}",
+              "expr": "link_tq{source_name=~\"$node\", target_name=~\"$node\"}",
               "intervalFactor": 2,
               "legendFormat": "{{source_name}} -> {{target_name}} ({{link_type}})",
               "metric": "link_tq",
