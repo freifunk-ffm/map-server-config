@@ -11,8 +11,7 @@
     { "name": "OpenStreetMap.Mapnik" },
     { "name": "OpenStreetMap.DE" },
     { "name": "Stamen.TonerLite" },
-    { "name": "Esri.WorldImagery" },
-    { "name": "MapQuestOpen.OSM" }
+    { "name": "Esri.WorldImagery" }
   ],
   "siteNames": [
     { "site": "ffffm", "name": "Freifunk Frankfurt" }
