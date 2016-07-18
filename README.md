@@ -31,4 +31,4 @@ z.Zt gibt es per [hopglass-server/alias.json](hopglass-server/alias.json) eine M
 
 ## Live
 
-Zur Zeit ist diese map anzuschauen unter: http://ffffmmap.ffdus.de/
+Zur Zeit ist diese map anzuschauen unter: https://hopglass.ffm.freifunk.net/
