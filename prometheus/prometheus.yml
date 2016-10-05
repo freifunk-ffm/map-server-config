@@ -1,8 +1,54 @@
 # /etc/prometheus/prometheus.yml
 global:
-  scrape_interval: 60s
-  evaluation_interval: 60s
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+  # scrape_timeout is set to the global default (10s).
+
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+      monitor: 'example'
+
+# Load and evaluate rules in this file every 'evaluation_interval' seconds.
+rule_files:
+  # - "first.rules"
+  # - "second.rules"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
 scrape_configs:
-  - job_name: 'node_map'
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+    scrape_timeout: 5s
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
     target_groups:
-      - targets: ['localhost:4000']
+      - targets: ['localhost:9090']
+
+  - job_name: node
+    # If prometheus-node-exporter is installed, grab stats about the local
+    # machine by default.
+    target_groups:
+      - targets: ['localhost:9100']
+      - targets: ['10.126.0.2:9100'] # UBER!
+      - targets: ['10.126.0.3:9100']
+      - targets: ['10.126.8.1:9100']
+      - targets: ['10.126.16.1:9100']
+      - targets: ['10.126.24.1:9100']
+      - targets: ['10.126.32.1:9100']
+
+  - job_name: 'node_map'
+    scrape_interval: 60s
+    scrape_timeout: 15s
+    metrics_path: '/hopglass/metrics'
+    target_groups:
+      - targets: ['localhost']
+  - job_name: pushgateway
+    honor_labels: true
+    target_groups:
+      - targets: ['localhost:9091']
