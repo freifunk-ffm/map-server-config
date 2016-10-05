@@ -1,2 +1,2 @@
 #/etc/default/prometheus
-ARGS="-web.listen-address 127.0.0.1:9090 -storage.local.retention 240h0m0s"
+ARGS="-storage.local.retention 720h0m0s"
