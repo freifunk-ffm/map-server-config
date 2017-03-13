@@ -1,0 +1,13 @@
+# Generic cache files
+*~
+.~*
+*.tmp
+*.temp
+*.lock
+*.DS_Store
+.*.swp
+*.out
+Thumbs.db
+*.back
+*.old
+
